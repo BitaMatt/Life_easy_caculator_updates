@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "channel": "stable",
+  "version": "1.1.0",
+  "build": 2,
+  "mandatory": false,
+  "publishedAt": "2026-09-05T18:51:11Z",
+  "android": {
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.1.0/LifeEasy-v1.1.0.apk",
+    "sha256": "3d04288c2ad066d4f1a6b9df63d82ff80333a53ed52beacc89bd105ace9587a5"
+  },
+  "web": {
+    "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
+  },
+  "notes": {
+    "zh": [
+      "修正香港 MPF 低收入供款、已達成儲蓄目標、月初存款倒推及極端分期 APR 等核心計算邊界錯誤。",
+      "修正智能精靈把 3.5% 顯示成 0.04% 的百分比口徑問題，並修正流程進度顯示。",
+      "修正深色模式白底淺字導致大量內容幾乎不可讀的問題，首頁、計算頁、智能精靈與設定頁改用 Material 3 語義色。",
+      "修正香港按揭 P/H 按欄位誤標、重複文字及 MPF 低收入說明不完整的問題。",
+      "強化跨平台 JSON 計算接口，支援來自 JSON 的 int、double、string 與 boolean 表達，不再依賴 Dart 精確型別。",
+      "新增正式 Web 構建入口，Android、Web 共用同一套計算引擎與 UI。",
+      "新增 App 內版本檢查、啟動後靜默自動檢查及公開更新清單機制，支援 Android 與 Web 發布地址。",
+      "建立微信小程序原生入口 + WebView 共用計算器的跨平台架構，可配置微信廣告位。",
+      "加強敏感資訊忽略規則與 Android 正式簽名流程，避免公開倉庫洩漏密鑰。",
+      "新增核心計算、智能精靈及 OCR 回歸測試。"
+    ],
+    "en": [
+      "Fixed core edge cases in Hong Kong MPF, already-reached savings goals, beginning-of-month deposits, and extreme installment APR calculations.",
+      "Fixed Smart Wizard percentage display errors such as showing 3.5% as 0.04%, and corrected its progress indicator.",
+      "Fixed severe dark-mode contrast issues by moving home, calculator, wizard, and settings surfaces to Material 3 semantic colors.",
+      "Fixed mislabeled Hong Kong P/H mortgage fields, duplicate result labels, and incomplete low-income MPF guidance.",
+      "Hardened the cross-platform JSON calculation API so JSON integers, doubles, strings, and boolean representations are normalized safely.",
+      "Added a production Web target sharing the same calculation engine and UI as Android.",
+      "Added in-app update checks, silent non-blocking startup checks, and a public release manifest for Android and Web destinations.",
+      "Added a WeChat Mini Program native shell + WebView architecture with configurable WeChat ad placements.",
+      "Hardened secret exclusions and Android release signing so credentials are never published to public repositories.",
+      "Added regression coverage for core calculations, Smart Wizard outputs, and policy OCR parsing."
+    ]
+  }
+}
