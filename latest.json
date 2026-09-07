@@ -1,37 +1,39 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.2.0",
-  "build": 4,
+  "version": "1.3.0",
+  "build": 5,
   "mandatory": false,
-  "publishedAt": "2026-09-06T10:32:09Z",
+  "publishedAt": "2026-09-07T09:26:32Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.2.0/LifeEasy-v1.2.0.apk",
-    "sha256": "e7f487e5c7eb76a8475bd1832aac3a7777361aab8788209d9615e5a111d9207f"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.3.0/LifeEasy-v1.3.0.apk",
+    "sha256": "88e5bbfafc51a413e8c98ae24426edb656f50fb095fc447c470127fdddf9c6ff"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "新增完整 Android App 內 OTA 更新：不再跳轉 GitHub 手動下載，App 直接下載 APK、顯示進度並在本機校驗 SHA-256 後交給 Android PackageInstaller 安裝。",
-      "首次 OTA 會自動帶到 Android「允許安裝應用程式」來源授權頁；授權後流程自動續接，後續版本不再重複要求來源權限。",
-      "安裝完成後接收 PackageInstaller 成功回調並盡力自動重新打開新版生計易；普通第三方 App 仍保留 Android 系統強制的最終安裝確認。",
-      "使用 AAP-AN00 真機完成兩輪 OTA 對抗測試：1.1.2-dev → 1.1.3-dev → 1.1.4-dev，驗證下載、SHA-256、首次來源授權、覆蓋安裝與安裝後自動回開鏈路。",
-      "修正特大字體設定會同步放大固定尺寸分享海報、導致主金額換行與明細裁切的問題；海報畫布現在固定使用標準文字比例，App 閱讀字體設定不再污染輸出圖片。",
-      "修正深色模式下分享海報預覽彈層硬編碼白底、卻繼承淺色文字而造成低對比的問題，彈層改用 Material `surface/onSurface` 語義色。",
-      "以 390×844 手機視窗、深色模式與特大字體重新實操 20 個計算器及智能精靈完整流程，確認所有入口可開啟且分享海報可正常生成。",
-      "新增海報專項回歸測試，鎖定固定畫布文字比例與深色預覽文字對比；完整 Flutter 測試擴充至 29 項並全部通過。"
+      "新增「智能計算器」：使用者可直接描述複雜目標，系統把多個既有計算模型串接起來，按目標反推需要做到的數值，而不是只推薦一個單獨計算器。",
+      "第一批組合配方支援「退休 × 儲蓄保險」「退休 × 指數定投」「生活開支 × 派息收入」「現金流 × 儲蓄目標」，並重用既有退休、保險、定投與儲蓄公式，避免多套算法結果漂移。",
+      "支援從自然語言提取 `80%`、`八成`、`一半`、`四分之三` 等覆蓋比例；若無法可靠判斷目標，改為讓使用者選最接近的組合方向，不盲猜。",
+      "對「保險本身覆蓋80%」與「現有資產＋保險合計覆蓋80%」新增明確消歧；原句默認按產品本身計算，只有使用者明確說加上現有資產一起才採合計口徑。",
+      "智能計算器會按方案逐步詢問目前本金、每月收入／開支、退休年齡、覆蓋目標、收益假設等必要資料，並檢查方案是否超過目前月結餘或佔用過多現金流。",
+      "新增智能組合海報：根據本次任務動態排列「目標、你的現況、反推方案、關鍵假設」區塊，保留使用者原始目標與核心結論；普通計算器海報維持原有版式。",
+      "退休保險及退休定投的智能結果可帶著已算出的數值跳入原本的詳細保險／定投計算器繼續細化。",
+      "優化手機端示例操作入口，避免浮動示例按鈕遮擋內容；加強海報主數值單行縮放保護。",
+      "完整 Flutter 回歸擴充至 37 項全部通過，Web 390×844 真實交互完成「自然語言 → 8項引導 → 結果 → 智能海報」全鏈路；Android Debug 與 Web Release 均成功構建。"
     ],
     "en": [
-      "Added a complete Android in-app OTA updater: the app now downloads APKs directly, shows progress, verifies SHA-256 locally, and hands the verified package to Android PackageInstaller instead of sending users to GitHub.",
-      "The first OTA automatically opens Android's per-app install-source permission page; after approval the flow resumes, and later updates do not ask for this source permission again.",
-      "Added PackageInstaller success handling to best-effort reopen the updated Life Easy app. Android's final system installation confirmation remains mandatory for ordinary third-party apps.",
-      "Completed two real-device OTA adversarial runs on AAP-AN00: 1.1.2-dev → 1.1.3-dev → 1.1.4-dev, covering download, SHA-256 verification, first-use source permission, in-place install, and post-install relaunch.",
-      "Fixed extra-large app text scaling leaking into the fixed-size share poster, which could wrap the main amount and clip detail values. Poster rendering now uses a fixed standard text scale independent of reading preferences.",
-      "Fixed low contrast in the share-poster preview under dark mode by replacing the hard-coded white sheet with Material `surface/onSurface` semantic colors.",
-      "Re-ran all 20 calculators and the complete Smart Wizard flow at a 390×844 mobile viewport with dark mode and extra-large text, confirming every entry opens and posters render correctly.",
-      "Added dedicated poster regression coverage for fixed canvas text scaling and dark-mode preview contrast; the full Flutter suite now contains 29 passing tests."
+      "Added the Smart Calculator: users can describe a complex goal in plain language and the app composes multiple existing calculation models to solve backwards for the required plan instead of merely recommending one calculator.",
+      "Initial combined recipes cover Retirement × Savings Insurance, Retirement × DCA, Living Expenses × Passive Income, and Cash Flow × Savings Goal while reusing the existing retirement, insurance, DCA and savings engines.",
+      "Natural-language parsing now recognizes coverage expressions such as `80%`, Chinese `八成`, “half”, and fractions. Unrecognized goals fall back to an explicit recipe chooser instead of guessing.",
+      "Added explicit disambiguation between “the insurance plan itself covers 80%” and “current assets plus insurance together cover 80%”. The former is the default unless the user clearly asks for combined coverage.",
+      "The guided flow asks only the data required for the selected plan, including capital, monthly income/expenses, retirement age, coverage target and return assumptions, and warns when the solved plan strains available monthly surplus.",
+      "Added smart composite posters that dynamically arrange Goal, Current Position, Calculated Plan and Key Assumptions while preserving the user's original goal. Existing single-calculator poster layouts remain unchanged.",
+      "Retirement-insurance and retirement-DCA results can open the detailed Insurance or DCA calculator with solved values prefilled for further refinement.",
+      "Improved mobile example actions so they stay in the content flow and strengthened single-line scaling protection for poster hero values.",
+      "Expanded the Flutter regression suite to 37 passing tests and completed a real 390×844 Web interaction run from natural-language intent through eight guided inputs, result, and smart poster. Android Debug and Web Release builds both succeed."
     ]
   }
 }
