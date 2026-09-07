@@ -1,39 +1,35 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.3.0",
-  "build": 5,
+  "version": "1.3.1",
+  "build": 6,
   "mandatory": false,
-  "publishedAt": "2026-09-07T09:26:32Z",
+  "publishedAt": "2026-09-07T10:19:30Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.3.0/LifeEasy-v1.3.0.apk",
-    "sha256": "88e5bbfafc51a413e8c98ae24426edb656f50fb095fc447c470127fdddf9c6ff"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.3.1/LifeEasy-v1.3.1.apk",
+    "sha256": "84c6c4591de83c326b075b3cce625f4bf9729716ab92d7b4a637169ea16c8bc6"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "新增「智能計算器」：使用者可直接描述複雜目標，系統把多個既有計算模型串接起來，按目標反推需要做到的數值，而不是只推薦一個單獨計算器。",
-      "第一批組合配方支援「退休 × 儲蓄保險」「退休 × 指數定投」「生活開支 × 派息收入」「現金流 × 儲蓄目標」，並重用既有退休、保險、定投與儲蓄公式，避免多套算法結果漂移。",
-      "支援從自然語言提取 `80%`、`八成`、`一半`、`四分之三` 等覆蓋比例；若無法可靠判斷目標，改為讓使用者選最接近的組合方向，不盲猜。",
-      "對「保險本身覆蓋80%」與「現有資產＋保險合計覆蓋80%」新增明確消歧；原句默認按產品本身計算，只有使用者明確說加上現有資產一起才採合計口徑。",
-      "智能計算器會按方案逐步詢問目前本金、每月收入／開支、退休年齡、覆蓋目標、收益假設等必要資料，並檢查方案是否超過目前月結餘或佔用過多現金流。",
-      "新增智能組合海報：根據本次任務動態排列「目標、你的現況、反推方案、關鍵假設」區塊，保留使用者原始目標與核心結論；普通計算器海報維持原有版式。",
-      "退休保險及退休定投的智能結果可帶著已算出的數值跳入原本的詳細保險／定投計算器繼續細化。",
-      "優化手機端示例操作入口，避免浮動示例按鈕遮擋內容；加強海報主數值單行縮放保護。",
-      "完整 Flutter 回歸擴充至 37 項全部通過，Web 390×844 真實交互完成「自然語言 → 8項引導 → 結果 → 智能海報」全鏈路；Android Debug 與 Web Release 均成功構建。"
+      "針對智能計算器新增一輪對抗性審查，專門測試否定詞、互斥方案、百分比更正、退休年齡反轉、負數、超大金額、越界覆蓋率／收益率與 0 年目標等異常輸入。",
+      "修正「退休不用保險、改用定投」仍可能因句中出現「保險」而誤判為保險方案；現在會辨識常見否定表達。",
+      "修正同一句同時要求「保險還是定投」時系統會暗中偏向其中一種的問題；遇到互斥意圖改為要求使用者自行選方案。",
+      "自然語言覆蓋率支援「八成半＝85%」等表達，並在「不是80%，改60%」等明確更正語句中以最後一次比例為準。",
+      "修正退休年齡先被強制改寫後才檢查、導致錯誤年齡警告永遠不會觸發的根因；現在先驗證原始輸入，再安全收斂至模型支援範圍並清楚提示。",
+      "金額、覆蓋率、收益率與年限加入安全邊界；負數、異常巨大數字與越界參數不再可能傳入核心公式造成溢出或產生看似正常的錯誤結果。",
+      "新增 200 組確定性隨機怪輸入壓力測試，所有智能方案的輸出均不得出現 NaN、Infinity、負保費或負本金；完整 Flutter 回歸現為 45 項全部通過。"
     ],
     "en": [
-      "Added the Smart Calculator: users can describe a complex goal in plain language and the app composes multiple existing calculation models to solve backwards for the required plan instead of merely recommending one calculator.",
-      "Initial combined recipes cover Retirement × Savings Insurance, Retirement × DCA, Living Expenses × Passive Income, and Cash Flow × Savings Goal while reusing the existing retirement, insurance, DCA and savings engines.",
-      "Natural-language parsing now recognizes coverage expressions such as `80%`, Chinese `八成`, “half”, and fractions. Unrecognized goals fall back to an explicit recipe chooser instead of guessing.",
-      "Added explicit disambiguation between “the insurance plan itself covers 80%” and “current assets plus insurance together cover 80%”. The former is the default unless the user clearly asks for combined coverage.",
-      "The guided flow asks only the data required for the selected plan, including capital, monthly income/expenses, retirement age, coverage target and return assumptions, and warns when the solved plan strains available monthly surplus.",
-      "Added smart composite posters that dynamically arrange Goal, Current Position, Calculated Plan and Key Assumptions while preserving the user's original goal. Existing single-calculator poster layouts remain unchanged.",
-      "Retirement-insurance and retirement-DCA results can open the detailed Insurance or DCA calculator with solved values prefilled for further refinement.",
-      "Improved mobile example actions so they stay in the content flow and strengthened single-line scaling protection for poster hero values.",
-      "Expanded the Flutter regression suite to 37 passing tests and completed a real 390×844 Web interaction run from natural-language intent through eight guided inputs, result, and smart poster. Android Debug and Web Release builds both succeed."
+      "Added a dedicated adversarial review for the Smart Calculator covering negation, mutually exclusive plans, corrected percentages, reversed retirement ages, negative values, huge amounts, out-of-range coverage/returns, and zero-year goals.",
+      "Fixed intent parsing where “do not use insurance; use DCA for retirement” could still be routed to insurance simply because the word “insurance” appeared in the sentence.",
+      "Mutually exclusive “insurance or DCA?” requests no longer silently choose one side; the app now asks the user to select the intended plan.",
+      "Natural-language coverage parsing now supports expressions such as Chinese “八成半” (85%) and respects explicit corrections such as “not 80%, change it to 60%”.",
+      "Fixed the root cause of retirement-age validation being unreachable after the value had already been normalized. Raw input is now validated first, then safely constrained with a visible warning.",
+      "Added safe bounds for money, coverage, rates and horizons so negative, extremely large, or out-of-range values cannot overflow core formulas or generate authoritative-looking nonsense.",
+      "Added a deterministic 200-case fuzz-style stress test requiring every Smart Calculator metric to remain finite and non-negative. The full Flutter regression suite now has 45 passing tests."
     ]
   }
 }
