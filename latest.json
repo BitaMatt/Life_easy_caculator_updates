@@ -1,37 +1,29 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.4.0",
-  "build": 7,
+  "version": "1.5.1",
+  "build": 9,
   "mandatory": false,
-  "publishedAt": "2026-09-07T11:16:38Z",
+  "publishedAt": "2026-09-08T06:33:18Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.4.0/LifeEasy-v1.4.0.apk",
-    "sha256": "1d7368ca607900932f7eb892c534f60503a499d7d15fccae4a4b5a65e15c0db2"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.5.1/LifeEasy-v1.5.1.apk",
+    "sha256": "a4ce367f3e741cf8c1729cd13891bdef9c2bd54ce5dd1c6ce55e05f69f80ca6a"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "智能計算器會從自然語言直接提取已明確說出的退休條件，包括「65歲退休」「活到100歲」等，並預填到後續問題；退休總需求、保險與定投模型不再把預期壽命固定寫死為85歲。",
-      "新增預期壽命問題與安全範圍檢查；預期壽命必須晚於退休年齡，異常輸入會明確警告而不是靜默套用錯誤假設。",
-      "新增「退休 × 智能資產組合」：當使用者不知道買什麼、要求資產配置、描述風險偏好，或希望多種產品一起承擔退休目標時，不再強制落到單一儲蓄保險／定投方案。",
-      "支援從「保本」「本金最多虧10%／20%／30%」「最大回撤」等自然語言提取風險上限；組合按保本／現金類、債券／低波動類、股票指數／高波動類三個風險桶配置。",
-      "組合使用壓力情景約束：規劃中的壓力跌幅不超過使用者填寫的最大本金虧損容忍度，並按組合演示收益反推退休目標所需每月投入；不會為了湊目標偷偷提高風險。",
-      "智能組合海報新增資產配比、每月分配、演示年化與壓力情景跌幅，並明確標示為情景規劃而非具體產品推薦或保證收益。",
-      "修正智能計算器共用取值函數把「缺少／空白欄位」錯當數字0、導致新增欄位無法套用模型預設值的底層問題。",
-      "新增65歲退休／活到100歲／保本／本金可虧30%／多產品組合等回歸與對抗測試；完整 Flutter 測試擴充至49項並全部通過，Web Release 與 Android Debug 均成功構建。"
+      "修正智能退休結果把年齡顯示成「65 年／100 年」的單位錯誤；目前年齡、退休年齡與預期壽命統一顯示為「歲」，自然語言輸入的「活到100歲」仍會真正帶入退休模型。",
+      "優化智能資產組合分享海報的版面比例。「具體怎麼買」保留現金／應急金、長期儲蓄保險、債券與寬基指數的完整操作說明，同時避免壓縮「目標」與「建議資產組合」到難以閱讀。",
+      "強化 Web 自動冒煙工具：不再把測試網址寫死為 8099、可在路由恢復舊捲動位置時正確檢查最高優先的智能資產組合入口，並改為依實際題數走完智能保險問卷。",
+      "重新完成 390×844 手機尺寸的真實 Web 流程驗證：智能向導、退休儲蓄保險、65歲退休／活到100歲／可虧30%／傳承／長期鎖定的智能資產組合，均能完成結果與分享海報；完整 Flutter 測試全部通過。"
     ],
     "en": [
-      "Smart Calculator now extracts explicit retirement conditions from natural language, including “retire at 65” and “live to 100”, and prefills them into the guided flow. Retirement, insurance and DCA calculations no longer hard-code life expectancy to 85.",
-      "Added a life-expectancy question and validation. Life expectancy must be later than retirement age; invalid inputs produce explicit warnings rather than silently using the wrong assumption.",
-      "Added Retirement × Smart Portfolio. When users do not know what to buy, ask for asset allocation, state a risk preference, or want multiple product types to share a retirement goal, the calculator no longer forces a single insurance or DCA solution.",
-      "Parses risk limits such as capital protection, maximum 10%/20%/30% capital loss and drawdown language, then allocates across protected/cash-like, bonds/lower-volatility and equity-index/higher-volatility buckets.",
-      "Portfolio stress-case loss is constrained to the user's stated maximum loss tolerance, and the resulting illustrative portfolio return is used to solve the monthly retirement funding required. The engine does not silently add risk just to make the goal fit.",
-      "Smart posters now include portfolio weights, monthly allocation, illustrative return and stress-case decline, with a clear scenario-planning disclaimer rather than a product recommendation or guaranteed return.",
-      "Fixed the shared smart-input accessor treating missing/blank fields as numeric zero, which previously prevented newly added fields from using their model defaults.",
-      "Added adversarial coverage for retire-at-65/live-to-100, capital-protected, 30%-loss-tolerance and multi-product portfolio cases. The full Flutter suite now has 49 passing tests; Web Release and Android Debug builds succeed."
+      "Fixed age units in smart retirement results where retirement age and life expectancy could be shown as “65 years / 100 years”. Current age, retirement age and life expectancy now use age units while “live to 100” continues to feed the retirement model correctly.",
+      "Rebalanced the Smart Portfolio share-poster layout. Detailed buying actions for emergency cash, long-term savings insurance, bonds and broad index assets remain readable without shrinking the Goal and Portfolio sections too aggressively.",
+      "Hardened the real-Web QA harness: the test URL is no longer hard-coded to port 8099, priority-card checks tolerate restored scroll position, and the retirement-insurance flow now walks the actual question count instead of assuming a fixed number.",
+      "Re-ran the 390×844 end-to-end Web flows for Smart Wizard, Retirement × Savings Insurance, and Smart Portfolio with retire-at-65/live-to-100/30%-loss-tolerance/legacy/long-lock inputs. Result and poster generation complete successfully and the full Flutter test suite passes."
     ]
   }
 }
