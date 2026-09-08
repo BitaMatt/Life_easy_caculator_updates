@@ -1,29 +1,37 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.5.1",
-  "build": 9,
+  "version": "1.6.0",
+  "build": 10,
   "mandatory": false,
-  "publishedAt": "2026-09-08T06:33:18Z",
+  "publishedAt": "2026-09-08T07:57:08Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.5.1/LifeEasy-v1.5.1.apk",
-    "sha256": "a4ce367f3e741cf8c1729cd13891bdef9c2bd54ce5dd1c6ce55e05f69f80ca6a"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.6.0/LifeEasy-v1.6.0.apk",
+    "sha256": "6c48921dd8079c3a9d2262aec0d11e3da6d342f019917e8da218a9ddf6009136"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "修正智能退休結果把年齡顯示成「65 年／100 年」的單位錯誤；目前年齡、退休年齡與預期壽命統一顯示為「歲」，自然語言輸入的「活到100歲」仍會真正帶入退休模型。",
-      "優化智能資產組合分享海報的版面比例。「具體怎麼買」保留現金／應急金、長期儲蓄保險、債券與寬基指數的完整操作說明，同時避免壓縮「目標」與「建議資產組合」到難以閱讀。",
-      "強化 Web 自動冒煙工具：不再把測試網址寫死為 8099、可在路由恢復舊捲動位置時正確檢查最高優先的智能資產組合入口，並改為依實際題數走完智能保險問卷。",
-      "重新完成 390×844 手機尺寸的真實 Web 流程驗證：智能向導、退休儲蓄保險、65歲退休／活到100歲／可虧30%／傳承／長期鎖定的智能資產組合，均能完成結果與分享海報；完整 Flutter 測試全部通過。"
+      "以5類常見用戶做完整「自然語言 → 引導 → 結果 → 購買方案」體驗測試：28歲長期增值、42歲退休兼傳承、55歲臨近退休保守型、35歲現金流吃緊家庭，以及5年買房首付目標；全部在390×844手機尺寸的真實 Flutter UI 流程通過。",
+      "智能計算器會直接理解更多口語條件，包括「我42歲」、現有100萬、月收入5萬／開支2.5萬、最多接受20%虧損、不需要／暫不確定傳承、錢要靈活、5年後準備50萬及按3%年化等，不再要求使用者把同一組資料重新填一次。",
+      "新增「已識別條件」快速路徑：先顯示系統從原句讀到的資料；已識別的欄位自動跳過，只追問缺少項目，同時保留「逐項確認全部條件」。本輪5個測試角色的問答量由11／11／11／11／6題降至1／1／1／2／0題。",
+      "預算不足的退休組合不再只顯示泛泛警告：新增「每月還差多少」與「只投入目前月結餘可覆蓋多少退休需求」，並把具體購買金額限制在真實月結餘內，不建議借錢硬湊目標。",
+      "現有本金不足應急金時改為分階段執行：先補至3個月生活費，再啟動長期組合；組合中的現金份額繼續把應急金逐步補到6／9個月目標，債券與指數投資亦明確標示為「第一階段應急金達標後」才開始。",
+      "保守型100%現金方案不再顯示0元債券／0元指數的無效購買指令；只有一類資產時亦不再提示無意義的±5%再平衡，而改為提醒檢查應急金及存款到期續存。",
+      "傳承型方案若目標月投入高於實際月結餘，儲蓄保險會同時列出「目標年度預算」及「目前現金流可執行年度預算」，避免給出使用者實際付不起的年繳建議。",
+      "新增可重跑的5角色 Persona UX 回歸測試及口語資料提取、預算差額、可負擔覆蓋率、零配置購買指令等專項測試；完整 Flutter 回歸共55項全部通過，Web Release 構建成功。"
     ],
     "en": [
-      "Fixed age units in smart retirement results where retirement age and life expectancy could be shown as “65 years / 100 years”. Current age, retirement age and life expectancy now use age units while “live to 100” continues to feed the retirement model correctly.",
-      "Rebalanced the Smart Portfolio share-poster layout. Detailed buying actions for emergency cash, long-term savings insurance, bonds and broad index assets remain readable without shrinking the Goal and Portfolio sections too aggressively.",
-      "Hardened the real-Web QA harness: the test URL is no longer hard-coded to port 8099, priority-card checks tolerate restored scroll position, and the retirement-insurance flow now walks the actual question count instead of assuming a fixed number.",
-      "Re-ran the 390×844 end-to-end Web flows for Smart Wizard, Retirement × Savings Insurance, and Smart Portfolio with retire-at-65/live-to-100/30%-loss-tolerance/legacy/long-lock inputs. Result and poster generation complete successfully and the full Flutter test suite passes."
+      "Ran five complete persona-based journeys through the real Flutter UI at a 390×844 phone viewport: a 28-year-old growth investor, a 42-year-old retirement-and-legacy family, a conservative 55-year-old near retirement, a cash-flow-constrained 35-year-old household, and a five-year home-deposit goal. All flows complete from natural language through guidance and results.",
+      "Smart Calculator now extracts more everyday phrasing directly, including “I am 42”, current capital such as 1 million, monthly income/expenses, tolerated loss, no/uncertain legacy needs, liquidity preferences, a five-year 500k goal, and a stated annual return assumption, so users no longer re-enter the same facts.",
+      "Added a recognized-data fast path. The app shows what it understood, skips fields already supplied in the sentence, asks only for missing inputs, and still offers a full item-by-item review. Across the five personas, guided questions fell from 11/11/11/11/6 to 1/1/1/2/0.",
+      "Retirement plans that exceed available cash flow now quantify the monthly shortfall and the retirement coverage achievable using current surplus alone. Purchase instructions are capped to actual monthly surplus instead of suggesting unaffordable contributions or borrowing to fill the target.",
+      "When emergency savings are insufficient, execution is phased: first reach three months of expenses, then start the long-term mix while its cash allocation continues building toward the six/nine-month reserve target. Bond and index actions explicitly wait until the first emergency-cash milestone.",
+      "A conservative 100% cash plan no longer shows meaningless zero-dollar bond/index purchase instructions, and a single-asset plan no longer recommends ±5% allocation rebalancing; it focuses on emergency cash and deposit renewals instead.",
+      "Legacy-oriented plans that exceed monthly surplus now show both the target annual insurance budget and the annual budget actually supported by current cash flow.",
+      "Added repeatable five-persona UX regression coverage plus dedicated tests for conversational extraction, budget gaps, affordable coverage and zero-allocation purchase actions. All 55 Flutter tests pass and the Web release build succeeds."
     ]
   }
 }
