@@ -1,37 +1,36 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.6.0",
-  "build": 10,
+  "version": "1.7.0",
+  "build": 11,
   "mandatory": false,
-  "publishedAt": "2026-09-08T07:57:08Z",
+  "publishedAt": "2026-09-08T09:39:06Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.6.0/LifeEasy-v1.6.0.apk",
-    "sha256": "6c48921dd8079c3a9d2262aec0d11e3da6d342f019917e8da218a9ddf6009136"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.7.0/LifeEasy-v1.7.0.apk",
+    "sha256": "2a26852a0334ea879efc89f0f6e6072c52b73b48bbadbde99e9ecfc25dc4bd6f"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "以5類常見用戶做完整「自然語言 → 引導 → 結果 → 購買方案」體驗測試：28歲長期增值、42歲退休兼傳承、55歲臨近退休保守型、35歲現金流吃緊家庭，以及5年買房首付目標；全部在390×844手機尺寸的真實 Flutter UI 流程通過。",
-      "智能計算器會直接理解更多口語條件，包括「我42歲」、現有100萬、月收入5萬／開支2.5萬、最多接受20%虧損、不需要／暫不確定傳承、錢要靈活、5年後準備50萬及按3%年化等，不再要求使用者把同一組資料重新填一次。",
-      "新增「已識別條件」快速路徑：先顯示系統從原句讀到的資料；已識別的欄位自動跳過，只追問缺少項目，同時保留「逐項確認全部條件」。本輪5個測試角色的問答量由11／11／11／11／6題降至1／1／1／2／0題。",
-      "預算不足的退休組合不再只顯示泛泛警告：新增「每月還差多少」與「只投入目前月結餘可覆蓋多少退休需求」，並把具體購買金額限制在真實月結餘內，不建議借錢硬湊目標。",
-      "現有本金不足應急金時改為分階段執行：先補至3個月生活費，再啟動長期組合；組合中的現金份額繼續把應急金逐步補到6／9個月目標，債券與指數投資亦明確標示為「第一階段應急金達標後」才開始。",
-      "保守型100%現金方案不再顯示0元債券／0元指數的無效購買指令；只有一類資產時亦不再提示無意義的±5%再平衡，而改為提醒檢查應急金及存款到期續存。",
-      "傳承型方案若目標月投入高於實際月結餘，儲蓄保險會同時列出「目標年度預算」及「目前現金流可執行年度預算」，避免給出使用者實際付不起的年繳建議。",
-      "新增可重跑的5角色 Persona UX 回歸測試及口語資料提取、預算差額、可負擔覆蓋率、零配置購買指令等專項測試；完整 Flutter 回歸共55項全部通過，Web Release 構建成功。"
+      "重構智能計算器的自然語言意圖判斷，不再以「退休關鍵字」為中心，而是先判斷使用者到底想反推哪個未知數：目標收益、期末資產、每月投入、所需收益率、所需時間、被動收入或資產配置。",
+      "「我想10年賺100萬」現在會識別為「收益目標」，其中「賺100萬」按淨投資收益理解，不把自己投入的本金算成收益；系統只追問缺少的收益率假設，並同時反推一次性投入與每月定投兩條路線。",
+      "新增通用財富計算情景：「每月投5000，10年後有多少」「50萬10年變100萬，要多少年化回報」「每月投5000、年化8%，多久到100萬」「我想每月有1萬被動收入，需要多少本金」「100萬本金、5%派息每月收多少」均可直接識別並進入對應模型。",
+      "「我想10年存100萬」與「10年賺100萬」正式分開處理：前者是期末資產目標，後者是淨收益目標。簡單儲蓄目標不再強迫填月收入、月開支和現有本金；沒有提供現金流時仍可先算每月需要投入多少。",
+      "新增真正不綁定退休年齡的「智能資產組合」，並提升為首頁最高優先入口。像「每月有5000閒錢，不知道怎麼投資，最多接受20%虧損」會直接按可投資本金、月投入、年期、風險、傳承與流動性做組合，不再詢問退休年齡。",
+      "通用資產組合會輸出現金／存款、長期儲蓄保險、債券及寬基指數的比例、現有本金分配、後續每月投入、分批進場及情景期末資產；退休組合則保留為獨立專項模型。",
+      "擴充口語數字與語義提取，包括「我有50萬」「100萬本金」「每月有5000閒錢」「月結餘5000」「5%派息」「10年存100萬」等，同時修正把「每月收入3萬」誤當成「每月投資3萬」及把派息率誤讀成本金的問題。",
+      "新增上述非退休流程的模型與真實 Flutter UI 回歸測試；完整 Flutter 測試共61項全部通過，390×844手機 UI 冒煙測試10項全部通過，Web Release 構建成功。"
     ],
     "en": [
-      "Ran five complete persona-based journeys through the real Flutter UI at a 390×844 phone viewport: a 28-year-old growth investor, a 42-year-old retirement-and-legacy family, a conservative 55-year-old near retirement, a cash-flow-constrained 35-year-old household, and a five-year home-deposit goal. All flows complete from natural language through guidance and results.",
-      "Smart Calculator now extracts more everyday phrasing directly, including “I am 42”, current capital such as 1 million, monthly income/expenses, tolerated loss, no/uncertain legacy needs, liquidity preferences, a five-year 500k goal, and a stated annual return assumption, so users no longer re-enter the same facts.",
-      "Added a recognized-data fast path. The app shows what it understood, skips fields already supplied in the sentence, asks only for missing inputs, and still offers a full item-by-item review. Across the five personas, guided questions fell from 11/11/11/11/6 to 1/1/1/2/0.",
-      "Retirement plans that exceed available cash flow now quantify the monthly shortfall and the retirement coverage achievable using current surplus alone. Purchase instructions are capped to actual monthly surplus instead of suggesting unaffordable contributions or borrowing to fill the target.",
-      "When emergency savings are insufficient, execution is phased: first reach three months of expenses, then start the long-term mix while its cash allocation continues building toward the six/nine-month reserve target. Bond and index actions explicitly wait until the first emergency-cash milestone.",
-      "A conservative 100% cash plan no longer shows meaningless zero-dollar bond/index purchase instructions, and a single-asset plan no longer recommends ±5% allocation rebalancing; it focuses on emergency cash and deposit renewals instead.",
-      "Legacy-oriented plans that exceed monthly surplus now show both the target annual insurance budget and the annual budget actually supported by current cash flow.",
-      "Added repeatable five-persona UX regression coverage plus dedicated tests for conversational extraction, budget gaps, affordable coverage and zero-allocation purchase actions. All 55 Flutter tests pass and the Web release build succeeds."
+      "Reworked Smart Calculator intent routing around the unknown the user wants solved rather than around retirement keywords: target gain, future value, monthly funding, required return, time to goal, passive income or asset allocation.",
+      "“I want to earn 1M in 10 years” is now a dedicated profit-goal flow. “Earn” means investment gain excluding contributed principal; the calculator asks only for the missing return assumption and solves both lump-sum and monthly-investing routes.",
+      "Added general wealth flows for future-value projection, required annual return, time-to-goal, passive-income capital targets, and passive-income projection from existing capital.",
+      "Final-value goals and profit goals are now distinct. A simple “save 1M in 10 years” flow no longer forces income, expenses or starting capital before it can calculate required monthly funding.",
+      "Added a true non-retirement Smart Portfolio and made it the highest-priority home entry. Spare-cash investment requests now use capital, monthly budget, horizon, risk, legacy and liquidity instead of asking for retirement ages.",
+      "Expanded conversational amount parsing and fixed false matches where monthly salary was mistaken for monthly investing or a yield percentage was mistaken for principal.",
+      "Added model and real Flutter UI regression coverage for the new non-retirement flows. All 61 Flutter tests pass, all 10 mobile UI smoke tests pass, and the Web release build succeeds."
     ]
   }
 }
