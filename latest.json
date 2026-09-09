@@ -1,29 +1,33 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.8.1",
-  "build": 14,
+  "version": "1.9.0",
+  "build": 15,
   "mandatory": false,
-  "publishedAt": "2026-09-09T09:39:47Z",
+  "publishedAt": "2026-09-09T11:09:26Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.8.1/LifeEasy-v1.8.1.apk",
-    "sha256": "04b3701a8e09e0eba3521711961beb9e40c4e8f0dcad7150c61e488fc28771f6"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.9.0/LifeEasy-v1.9.0.apk",
+    "sha256": "6273973afa640dd8ef4ab3020c2329f42c5a23f7284cec9d048cc73571e6ffb6"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "修正智能資產組合分享海報中「具體怎麼買」等長文字卡片會因 2×2 半寬排版而截掉最後一行的問題。",
-      "長購買建議改為全寬縱向資訊條，並按文字長度自動分配卡片高度；同時提高購買建議區在海報中的垂直空間。",
-      "新增段落型自適應排版：完整句子不再設定固定 `maxLines` 或使用省略號，而是依卡片實際可用高度自動縮放字號，優先保證所有內容完整顯示。",
-      "加入長文字海報回歸測試，專門檢查智能組合購買建議不會再以 ellipsis 截掉最後一行；完整 Flutter 回歸與相關靜態分析均通過。"
+      "重構智能計算器的分享輸出：海報改為「核心摘要」定位，只展示最重要的結果、核心配置、成就評價及一句分析書提示，不再把完整買法、假設與風險說明塞進同一張 9:16 海報。",
+      "新增「生計易分析書」多頁報告，沿用同一份計算結果資料，完整收錄目標與結果總覽、每個分析區塊、具體購買動作、計算假設，以及智能計算器產生的風險與提醒，避免海報與詳細報告出現兩套數字。",
+      "分析書以 Flutter 實際排版逐頁渲染後封裝成 PDF，因此簡體中文、繁體中文及英文均沿用 App 本身字體渲染，不依賴 PDF 內置拉丁字體；長文字會在分析書頁面自適應顯示。",
+      "分享預覽新增「核心海報 / 分析書」切換；分享時可選「只分享海報」「只分享分析書」「海報 + 分析書」，後兩者會輸出 PDF，組合分享會同時附上 PNG 海報和 PDF 分析書。",
+      "默認智能資產組合及退休智能組合的海報配置進一步簡化為純比例摘要；本金分配、每月投入、分批買入方式、應急金、再平衡規則等深入內容保留到分析書。",
+      "新增核心海報/分析書分流、三種分享選項、三語文案及 PDF 實際生成回歸測試；完整 Flutter 回歸 74 項全部通過，相關靜態分析 0 issues，Web Release 構建成功。"
     ],
     "en": [
-      "Fixed Smart Portfolio share-poster cards where long “How to buy” instructions could lose their final line inside the previous 2×2 half-width grid.",
-      "Long purchase instructions now use full-width stacked rows with height allocation based on copy length, and the purchase section receives more vertical space on the poster.",
-      "Added paragraph-aware auto fitting: full-sentence guidance no longer relies on fixed `maxLines` or ellipsis, and instead scales text to the real card height so the complete recommendation stays visible.",
-      "Added a regression test specifically covering long Smart Portfolio poster guidance to prevent final-line truncation. Full Flutter regression and targeted static analysis pass."
+      "Reworked Smart Calculator sharing into two distinct outputs. The poster is now a concise social summary with only the key result, core allocation, achievement profile and a short pointer to the analysis book, instead of squeezing full actions, assumptions and risks into one 9:16 image.",
+      "Added a multi-page LifeEasy Analysis Book built from the exact same calculation result. It includes the goal and executive summary, every detailed analysis section, concrete purchase actions, calculation assumptions, and Smart Calculator risk notes without recalculating a second set of numbers.",
+      "Analysis pages are rendered with Flutter first and then packaged into PDF, so Simplified Chinese, Traditional Chinese and English use the same app text rendering rather than relying on Latin-only PDF fonts. Long guidance remains auto-fitted inside the report pages.",
+      "The share preview now switches between Core poster and Analysis book. Sharing offers Poster only, Analysis book only, or Poster + analysis book; combined sharing attaches both the PNG poster and PDF report.",
+      "Default Smart Portfolio and retirement portfolio posters now show allocation percentages as the compact core view, while capital splits, monthly actions, staged purchases, emergency funds and rebalance rules move to the analysis book.",
+      "Added regression coverage for the poster/report split, all three share choices, three-language labels and real PDF generation. All 74 Flutter tests pass, targeted static analysis reports 0 issues, and the Web release build succeeds."
     ]
   }
 }
