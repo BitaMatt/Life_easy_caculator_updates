@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1C6F68"/><stop offset="1" stop-color="#08393F"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A9F3F0"/><stop offset="1" stop-color="#28A9C1"/></linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="url(#bg)" stroke="#E8C26E" stroke-width="5"/>
+  <path d="M46 70h108l-15 26H61z" fill="#496A61"/>
+  <path d="M73 48h54l15 22H58z" fill="#5F766B"/>
+  <path d="M88 70h24v53c0 15-24 15-24 0z" fill="url(#water)"/>
+  <path d="M64 104c10 0 19 5 24 13M136 104c-10 0-19 5-24 13" fill="none" stroke="#82E7E4" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="100" cy="146" rx="60" ry="24" fill="#166E7D" stroke="#61DCE1" stroke-width="4"/>
+  <ellipse cx="100" cy="146" rx="39" ry="13" fill="none" stroke="#9DF5F0" stroke-width="3" opacity=".75"/>
+  <circle cx="55" cy="127" r="11" fill="#E6B24E" stroke="#FFE8A2" stroke-width="2"/><circle cx="145" cy="129" r="11" fill="#E6B24E" stroke="#FFE8A2" stroke-width="2"/><circle cx="100" cy="149" r="12" fill="#E6B24E" stroke="#FFE8A2" stroke-width="2"/>
+  <path d="M51 127h8M141 129h8M96 149h8" stroke="#7D531B" stroke-width="3" stroke-linecap="round"/>
+</svg>

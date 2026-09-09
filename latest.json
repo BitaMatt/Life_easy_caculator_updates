@@ -1,36 +1,37 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.7.0",
-  "build": 11,
+  "version": "1.8.0",
+  "build": 13,
   "mandatory": false,
-  "publishedAt": "2026-09-08T09:39:06Z",
+  "publishedAt": "2026-09-09T08:47:09Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.7.0/LifeEasy-v1.7.0.apk",
-    "sha256": "2a26852a0334ea879efc89f0f6e6072c52b73b48bbadbde99e9ecfc25dc4bd6f"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.8.0/LifeEasy-v1.8.0.apk",
+    "sha256": "0aa1f07b7a6bc2da470459f904564fd3d7b42a49b701b74a424cbb6d0e54814b"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "重構智能計算器的自然語言意圖判斷，不再以「退休關鍵字」為中心，而是先判斷使用者到底想反推哪個未知數：目標收益、期末資產、每月投入、所需收益率、所需時間、被動收入或資產配置。",
-      "「我想10年賺100萬」現在會識別為「收益目標」，其中「賺100萬」按淨投資收益理解，不把自己投入的本金算成收益；系統只追問缺少的收益率假設，並同時反推一次性投入與每月定投兩條路線。",
-      "新增通用財富計算情景：「每月投5000，10年後有多少」「50萬10年變100萬，要多少年化回報」「每月投5000、年化8%，多久到100萬」「我想每月有1萬被動收入，需要多少本金」「100萬本金、5%派息每月收多少」均可直接識別並進入對應模型。",
-      "「我想10年存100萬」與「10年賺100萬」正式分開處理：前者是期末資產目標，後者是淨收益目標。簡單儲蓄目標不再強迫填月收入、月開支和現有本金；沒有提供現金流時仍可先算每月需要投入多少。",
-      "新增真正不綁定退休年齡的「智能資產組合」，並提升為首頁最高優先入口。像「每月有5000閒錢，不知道怎麼投資，最多接受20%虧損」會直接按可投資本金、月投入、年期、風險、傳承與流動性做組合，不再詢問退休年齡。",
-      "通用資產組合會輸出現金／存款、長期儲蓄保險、債券及寬基指數的比例、現有本金分配、後續每月投入、分批進場及情景期末資產；退休組合則保留為獨立專項模型。",
-      "擴充口語數字與語義提取，包括「我有50萬」「100萬本金」「每月有5000閒錢」「月結餘5000」「5%派息」「10年存100萬」等，同時修正把「每月收入3萬」誤當成「每月投資3萬」及把派息率誤讀成本金的問題。",
-      "新增上述非退休流程的模型與真實 Flutter UI 回歸測試；完整 Flutter 測試共61項全部通過，390×844手機 UI 冒煙測試10項全部通過，Web Release 構建成功。"
+      "重做分享海報的「成就」系統，不再用 S/A/B/C/D 配「理財大師／萌新」這類單純段位稱號；改為 8 種有故事感的財務成就：財務根系者、時間鍊金師、里程摘星者、波動駕馭者、現金流泉眼、晚霞靠岸者、星火傳燈人、長跑定投者。",
+      "依照已確認的 GPT-image 概念稿，為 8 種成就製作可直接在 App／海報渲染的獨立 SVG 徽章；圖標語義在簡體中文、繁體中文及英文保持一致，稱號、標語、財務軌道與評價文字則各自本地化。",
+      "成就不再只看一個「分數高低」：每一類都會按實際計算結果進入起步期／築基期／穩步期／進階期／成熟期，並生成低／中／高三段不同的結果評價，例如目標是否可行、現金流能否承擔、退休覆蓋率、被動收入覆蓋率、風險是否貼近承受上限、投資期限及傳承配置等。",
+      "智能計算器的每一種情景都正式接入成就判斷：退休保險可成為「星火傳燈人」、退休／退休組合可成為「晚霞靠岸者」、閒錢資產組合按壓力回撤切換「時間鍊金師／波動駕馭者」、被動收入使用「現金流泉眼」、目標／所需時間使用「里程摘星者」、長期定投使用「長跑定投者」。",
+      "調整定投、派息、儲蓄及目標類的成就評分邏輯，避免「假設收益率越高／派息率越高，成就就越高」的錯誤遊戲化：高派息與過高回報假設不會自動獲得更好評價，評分更重視期限、紀律、可持續性、目標進度與風險匹配。",
+      "真實 Web 回歸同時抓到並修正「本金最多可虧 30%」被誤讀成「現有本金 30 元」的自然語言污染問題；風險百分比現在不會再偷填入現有本金欄位。",
+      "分享海報的成就區改為高級淺色徽章卡：直接展示專屬插畫徽章、成就名稱、短標語、「財務軌道 · 階段」及動態評價；不再把英文字母段位放在最顯眼位置。智能組合海報亦使用同一套成就視覺，而不是只顯示一行普通點評。",
+      "新增三語成就專項測試，驗證 8 種成就均有獨立圖標、簡中／繁中／英文名稱與評價，並在實際海報 Widget 中成功載入 SVG；完整 Flutter 回歸共 71 項全部通過，相關程式靜態分析無問題，Web Release 構建成功。"
     ],
     "en": [
-      "Reworked Smart Calculator intent routing around the unknown the user wants solved rather than around retirement keywords: target gain, future value, monthly funding, required return, time to goal, passive income or asset allocation.",
-      "“I want to earn 1M in 10 years” is now a dedicated profit-goal flow. “Earn” means investment gain excluding contributed principal; the calculator asks only for the missing return assumption and solves both lump-sum and monthly-investing routes.",
-      "Added general wealth flows for future-value projection, required annual return, time-to-goal, passive-income capital targets, and passive-income projection from existing capital.",
-      "Final-value goals and profit goals are now distinct. A simple “save 1M in 10 years” flow no longer forces income, expenses or starting capital before it can calculate required monthly funding.",
-      "Added a true non-retirement Smart Portfolio and made it the highest-priority home entry. Spare-cash investment requests now use capital, monthly budget, horizon, risk, legacy and liquidity instead of asking for retirement ages.",
-      "Expanded conversational amount parsing and fixed false matches where monthly salary was mistaken for monthly investing or a yield percentage was mistaken for principal.",
-      "Added model and real Flutter UI regression coverage for the new non-retirement flows. All 61 Flutter tests pass, all 10 mobile UI smoke tests pass, and the Web release build succeeds."
+      "Rebuilt poster achievements around eight narrative financial identities instead of generic S/A/B/C/D ranks with “master/newbie” titles: Rooted Wealth Builder, Time Alchemist, Milestone Star Climber, Volatility Surfer, Cashflow Spring, Sunset Harbor Planner, Legacy Lantern Bearer and Long-Run Investor.",
+      "Turned the approved GPT-image concept direction into eight independent SVG badges that render directly in the app and shared posters. Icon semantics stay consistent across Simplified Chinese, Traditional Chinese and English while titles, taglines, financial-track labels and evaluations are localized per language.",
+      "Achievements now react to actual calculation outcomes rather than only a single score. Each identity moves through Starting / Building / Steady / Advanced / Established stages and uses different low/mid/high evaluations based on feasibility, cash-flow affordability, retirement/passive-income coverage, risk budget, investment horizon and legacy structure.",
+      "Connected every Smart Calculator flow to a relevant achievement: retirement insurance can become Legacy Lantern Bearer, retirement planning uses Sunset Harbor Planner, portfolio results switch between Time Alchemist and Volatility Surfer according to risk, passive-income flows use Cashflow Spring, goal/time-to-target flows use Milestone Star Climber, and long-term DCA uses Long-Run Investor.",
+      "Reworked DCA, dividend, savings and goal achievement scoring so unrealistic return or headline yield assumptions are not rewarded. Scores now emphasize horizon, discipline, sustainability, progress, affordability and risk fit.",
+      "Real-Web regression also caught and fixed a parser contamination bug where “can lose 30% of principal” could be misread as “current capital = 30”. Risk percentages no longer prefill current capital.",
+      "Redesigned the poster achievement area as a premium light badge card with the dedicated illustrated icon, title, tagline, financial-track stage and result-dependent evaluation. Letter grades are no longer the dominant visual, and Smart Calculator posters now use the same narrative achievement system.",
+      "Added three-language achievement regression tests covering all eight unique SVG assets and localized poster rendering. All 71 Flutter tests pass, targeted static analysis reports no issues, and the Web release build succeeds."
     ]
   }
 }
