@@ -1,37 +1,29 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.8.0",
-  "build": 13,
+  "version": "1.8.1",
+  "build": 14,
   "mandatory": false,
-  "publishedAt": "2026-09-09T08:47:09Z",
+  "publishedAt": "2026-09-09T09:39:47Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.8.0/LifeEasy-v1.8.0.apk",
-    "sha256": "0aa1f07b7a6bc2da470459f904564fd3d7b42a49b701b74a424cbb6d0e54814b"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.8.1/LifeEasy-v1.8.1.apk",
+    "sha256": "04b3701a8e09e0eba3521711961beb9e40c4e8f0dcad7150c61e488fc28771f6"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "重做分享海報的「成就」系統，不再用 S/A/B/C/D 配「理財大師／萌新」這類單純段位稱號；改為 8 種有故事感的財務成就：財務根系者、時間鍊金師、里程摘星者、波動駕馭者、現金流泉眼、晚霞靠岸者、星火傳燈人、長跑定投者。",
-      "依照已確認的 GPT-image 概念稿，為 8 種成就製作可直接在 App／海報渲染的獨立 SVG 徽章；圖標語義在簡體中文、繁體中文及英文保持一致，稱號、標語、財務軌道與評價文字則各自本地化。",
-      "成就不再只看一個「分數高低」：每一類都會按實際計算結果進入起步期／築基期／穩步期／進階期／成熟期，並生成低／中／高三段不同的結果評價，例如目標是否可行、現金流能否承擔、退休覆蓋率、被動收入覆蓋率、風險是否貼近承受上限、投資期限及傳承配置等。",
-      "智能計算器的每一種情景都正式接入成就判斷：退休保險可成為「星火傳燈人」、退休／退休組合可成為「晚霞靠岸者」、閒錢資產組合按壓力回撤切換「時間鍊金師／波動駕馭者」、被動收入使用「現金流泉眼」、目標／所需時間使用「里程摘星者」、長期定投使用「長跑定投者」。",
-      "調整定投、派息、儲蓄及目標類的成就評分邏輯，避免「假設收益率越高／派息率越高，成就就越高」的錯誤遊戲化：高派息與過高回報假設不會自動獲得更好評價，評分更重視期限、紀律、可持續性、目標進度與風險匹配。",
-      "真實 Web 回歸同時抓到並修正「本金最多可虧 30%」被誤讀成「現有本金 30 元」的自然語言污染問題；風險百分比現在不會再偷填入現有本金欄位。",
-      "分享海報的成就區改為高級淺色徽章卡：直接展示專屬插畫徽章、成就名稱、短標語、「財務軌道 · 階段」及動態評價；不再把英文字母段位放在最顯眼位置。智能組合海報亦使用同一套成就視覺，而不是只顯示一行普通點評。",
-      "新增三語成就專項測試，驗證 8 種成就均有獨立圖標、簡中／繁中／英文名稱與評價，並在實際海報 Widget 中成功載入 SVG；完整 Flutter 回歸共 71 項全部通過，相關程式靜態分析無問題，Web Release 構建成功。"
+      "修正智能資產組合分享海報中「具體怎麼買」等長文字卡片會因 2×2 半寬排版而截掉最後一行的問題。",
+      "長購買建議改為全寬縱向資訊條，並按文字長度自動分配卡片高度；同時提高購買建議區在海報中的垂直空間。",
+      "新增段落型自適應排版：完整句子不再設定固定 `maxLines` 或使用省略號，而是依卡片實際可用高度自動縮放字號，優先保證所有內容完整顯示。",
+      "加入長文字海報回歸測試，專門檢查智能組合購買建議不會再以 ellipsis 截掉最後一行；完整 Flutter 回歸與相關靜態分析均通過。"
     ],
     "en": [
-      "Rebuilt poster achievements around eight narrative financial identities instead of generic S/A/B/C/D ranks with “master/newbie” titles: Rooted Wealth Builder, Time Alchemist, Milestone Star Climber, Volatility Surfer, Cashflow Spring, Sunset Harbor Planner, Legacy Lantern Bearer and Long-Run Investor.",
-      "Turned the approved GPT-image concept direction into eight independent SVG badges that render directly in the app and shared posters. Icon semantics stay consistent across Simplified Chinese, Traditional Chinese and English while titles, taglines, financial-track labels and evaluations are localized per language.",
-      "Achievements now react to actual calculation outcomes rather than only a single score. Each identity moves through Starting / Building / Steady / Advanced / Established stages and uses different low/mid/high evaluations based on feasibility, cash-flow affordability, retirement/passive-income coverage, risk budget, investment horizon and legacy structure.",
-      "Connected every Smart Calculator flow to a relevant achievement: retirement insurance can become Legacy Lantern Bearer, retirement planning uses Sunset Harbor Planner, portfolio results switch between Time Alchemist and Volatility Surfer according to risk, passive-income flows use Cashflow Spring, goal/time-to-target flows use Milestone Star Climber, and long-term DCA uses Long-Run Investor.",
-      "Reworked DCA, dividend, savings and goal achievement scoring so unrealistic return or headline yield assumptions are not rewarded. Scores now emphasize horizon, discipline, sustainability, progress, affordability and risk fit.",
-      "Real-Web regression also caught and fixed a parser contamination bug where “can lose 30% of principal” could be misread as “current capital = 30”. Risk percentages no longer prefill current capital.",
-      "Redesigned the poster achievement area as a premium light badge card with the dedicated illustrated icon, title, tagline, financial-track stage and result-dependent evaluation. Letter grades are no longer the dominant visual, and Smart Calculator posters now use the same narrative achievement system.",
-      "Added three-language achievement regression tests covering all eight unique SVG assets and localized poster rendering. All 71 Flutter tests pass, targeted static analysis reports no issues, and the Web release build succeeds."
+      "Fixed Smart Portfolio share-poster cards where long “How to buy” instructions could lose their final line inside the previous 2×2 half-width grid.",
+      "Long purchase instructions now use full-width stacked rows with height allocation based on copy length, and the purchase section receives more vertical space on the poster.",
+      "Added paragraph-aware auto fitting: full-sentence guidance no longer relies on fixed `maxLines` or ellipsis, and instead scales text to the real card height so the complete recommendation stays visible.",
+      "Added a regression test specifically covering long Smart Portfolio poster guidance to prevent final-line truncation. Full Flutter regression and targeted static analysis pass."
     ]
   }
 }
