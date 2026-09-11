@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.13.0",
-  "build": 19,
+  "version": "1.14.0",
+  "build": 20,
   "mandatory": false,
-  "publishedAt": "2026-09-11T11:07:25Z",
+  "publishedAt": "2026-09-11T23:45:38Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0.apk",
-    "sha256": "633399c9fae53b992c61118c5227931007d50878423f552b851f64d8eaf3172b",
-    "size": 45313337,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0.apk",
+    "sha256": "104f46ed3a645301cf174a61ff22dce010994340abccac9791601c06d0dfd291",
+    "size": 45391137,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0-arm64-v8a.apk",
-        "sha256": "9af8b150df974209e18f13de7ff52a78eebdf80eba43ae6edb928bec3810c220",
-        "size": 18994686
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0-arm64-v8a.apk",
+        "sha256": "dc3b01517bff80527e47f2f013dea03714055c96e1e6a0db2194987d7d9098c2",
+        "size": 19017338
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0-armeabi-v7a.apk",
-        "sha256": "b9854ac84267c0eef1c8c131ac26ff2aab7d49548d709e3c3e1b92e091572bc4",
-        "size": 17869124
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0-armeabi-v7a.apk",
+        "sha256": "b423de3f7de406be8c9d9a7942ab78d3eae0045a38284468c043efc0b763032b",
+        "size": 17898960
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0-x86_64.apk",
-        "sha256": "20694e8f33416640abb16e822bf12d4e744076e1801adef5a41f90615fee678e",
-        "size": 19261359
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0-x86_64.apk",
+        "sha256": "f285a15e9c0a3d2425f5e589cf9ea093788b55981982710b9c96a73eea7794bc",
+        "size": 19286671
       }
     }
   },
@@ -32,22 +32,22 @@
   },
   "notes": {
     "zh": [
-      "大幅優化 Android 更新包下載體積：直接 APK 渠道改用壓縮 JNI 原生庫。以本地同一套 Debug 包實測，APK 由約 197.9 MB 降到約 107.5 MB；正式 Release 仍會由 CI 重新量測與校驗，不以 Debug 數字冒充正式包大小。",
-      "OTA 更新新增 ABI 小包機制：正式發布時同時產生通用 APK、arm64-v8a、armeabi-v7a 與 x86_64 專用 APK。升級到本版本後，後續 Android 更新會優先按裝置 ABI 下載對應小包，無法識別 ABI 時才安全回退通用 APK；舊版清單格式仍完全相容。",
-      "更新清單升級到 schema 2，可記錄每個 APK 的 URL、SHA-256 與檔案大小；發布流程會同步把四種 APK 上傳到公開更新倉，保留原本通用 APK 作為兼容後備。",
-      "智能計算器補強真實口語與錯字理解。「10萬本金10年翻10倍的年化日是多少？」現在可直接理解為本金 10 萬、10 年後變成原本金的 10 倍，零追問反推等效複合年化約 25.89%。同時支援 `10w`、`10年x10`、`10x`、`翻十倍`、`年化幾多/年化？` 等常見輸入。",
-      "擴大「正常人打字」對抗測試：補上省略標點、口語粵語、k/w 縮寫、簡短 IRR 問法、`每月再投`、`最後幾多`、`保單表`、`比下` 等寫法，避免智能計算器只對標準範例句有效。",
-      "「可以這樣說」不再一次鋪滿十幾個例子，改成「常用、年化/回報、存錢/目標、產品分析/比較、組合/退休」五類切換；每次只展示當前類別 4–5 個例子，手機首頁更易掃讀。",
-      "完整 Flutter 回歸 109 項全部通過；新增 Android ABI 選包單元測試、390×844 錯字輸入流程與分類示例 UI 測試，相關 Dart 靜態分析 0 issues，Android Debug 構建及 JNI 壓縮包驗證成功。"
+      "修正智能計算器官方範例本身都可能無法識別的漏洞：`10萬放11年，最後總共拿41.8萬，真實年化多少` 現在會直接識別為本金 10 萬、年期 11 年、到期總額 41.8 萬，零追問算出等效複合年化約 13.89%。同時新增「所有畫面官方範例 × 簡中／繁中／英文」逐句回歸，避免只測相似句而漏掉使用者真正按到的範例。",
+      "產品收益比較由固定的「收租 vs 複利」模板升級為參數化比較：先選兩邊產品類型，再用日常說法填少量條件即可畫曲線。支援儲蓄保險、定期／存款、基金／ETF／股票、買樓收租、債券／派息產品及自訂產品；同類產品亦可直接比較，例如「定期 A 3% vs 定期 B 4%」。",
+      "產品比較不再要求一定提供逐年利益表。除了直接年化與每年現金收入，亦可只輸入「第 11 年總值 41.8 萬」或「第 11 年累計收益 31.8 萬」，由系統反推等效增長曲線，再標記翻倍、反超、指定年期價值、差額及觀察期 IRR；真實逐年利益表保留為可選的精確模式。",
+      "全面重審分享海報的資訊優先級，統一採用「核心計算結果 + 決定結果的主要輸入」原則。定期存款海報現在明確顯示本金、年利率、存期、計息方式與到期本息；定投、儲蓄目標、派息、開支覆蓋、退休、房貸、分期、個稅、預算、儲蓄保險、港澳台按揭、AA、匯率、油費、健康、高端消費與單位換算等分享海報亦補齊各自的關鍵輸入。",
+      "儲蓄保險海報另作密度優化：退保模式會把年繳保費與繳費年期、退保年度、退保總值等核心資料放在同一張海報；領取規劃模式則顯示保費／年期、演示利率、開始領取年度、每年領取、累計領取、期末價值與淨收益，避免把所有明細硬塞到分享圖造成溢出。",
+      "普通計算器海報的摘要文字改為依可用空間自動縮放，不再以固定兩行加省略號截掉重要輸入；海報核心欄位在 390×844 手機分享預覽中加入實際布局回歸。",
+      "完整 Flutter 回歸 120 項全部通過；針對本次修改檔案的 Dart 靜態分析 0 issues，Web Release 構建成功。"
     ],
     "en": [
-      "Significantly reduced Android direct-APK download size by switching native JNI libraries to compressed APK packaging. On the same local Debug build, APK size dropped from about 197.9 MB to about 107.5 MB. Release size is measured again in CI rather than presenting Debug numbers as production figures.",
-      "Added ABI-aware OTA packages. Releases now publish a universal APK plus arm64-v8a, armeabi-v7a and x86_64 standalone APKs. After installing this version, future Android updates prefer the device-specific APK and safely fall back to the universal package when ABI detection is unavailable; older manifests remain compatible.",
-      "Upgraded update metadata to schema 2 with URL, SHA-256 and file size for every Android artifact, while retaining the universal APK as the backward-compatible fallback.",
-      "Hardened Smart Calculator handling of real typing and typos. `100k principal, 10 years, 10x — what annualized return?` and the Chinese typo form `10萬本金10年翻10倍的年化日是多少？` now resolve directly to an equivalent compounded annual return of about 25.89%, with support for `10w`, `10年x10`, `10x`, Chinese multiple wording and short annual-return questions.",
-      "Expanded noisy-input regression coverage for omitted punctuation, Cantonese phrasing, k/w abbreviations, short IRR questions, monthly-additional-investment wording, shorthand policy-table wording and casual comparison phrases.",
-      "Reorganized the Smart Calculator example area into five filters — Common, Return/IRR, Goals, Products, and Portfolio — so the mobile home screen shows only 4–5 relevant examples at a time instead of a long unstructured chip list.",
-      "All 109 Flutter tests pass. Added ABI artifact-selection tests, a 390×844 typo-input flow and categorized-example UI regression; targeted Dart analysis reports 0 issues, and the Android Debug build with compressed JNI packaging succeeds."
+      "Fixed a gap where even an example shown by the Smart Calculator could fail to parse. `100k left for 11 years and 418k received in total — what is the real annualized return?` now resolves directly to 100k principal, 11 years and 418k final value, producing about 13.89% equivalent CAGR with no follow-up questions. Added a regression that checks every visible official example in Simplified Chinese, Traditional Chinese and English instead of only testing similar phrases.",
+      "Upgraded product return comparison from a fixed rental-vs-compound template to parameterized comparison. Pick each product type and describe only a few return assumptions in normal language. Savings insurance, time deposits, funds/ETFs/stocks, rental property, bonds/income products and custom products are supported, including same-type comparisons such as Deposit A at 3% vs Deposit B at 4%.",
+      "Year-by-year tables are no longer mandatory for ordinary comparisons. Besides direct annual returns and yearly cash income, the app can accept a single observation such as `year 11 total value 418k` or `year 11 cumulative profit 318k`, derive an equivalent growth curve, and mark doubling, crossover, horizon values, gaps and estimated horizon IRR. Real yearly schedules remain available as the optional precision mode.",
+      "Audited share posters around one rule: show the core calculation result together with the main inputs that determine it. The Time Deposit poster now explicitly includes principal, annual rate, term, interest basis and maturity value; DCA, goals, dividends, expense coverage, retirement, mortgage, installments, tax, budget, insurance, regional mortgage, split bills, FX, commute cost, health, luxury-cost and unit-conversion posters were audited and supplemented as well.",
+      "Rebalanced Savings Insurance poster density. Surrender posters now surface annual premium/payment term, surrender year and surrender value, while payout-plan posters surface premium/term, illustration rate, payout start, annual payout, cumulative payout, final policy value and net gain without overflowing the social poster.",
+      "Direct-calculator poster summaries now auto-fit to available space rather than truncating important assumptions with a fixed two-line ellipsis. Added real 390×844 share-preview layout regression for the poster audit.",
+      "All 120 Flutter tests pass; targeted Dart analysis for every file changed in this release reports 0 issues, and the Web release build succeeds."
     ]
   }
 }
