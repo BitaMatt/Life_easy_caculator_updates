@@ -1,33 +1,37 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.9.0",
-  "build": 15,
+  "version": "1.10.0",
+  "build": 16,
   "mandatory": false,
-  "publishedAt": "2026-09-09T11:09:26Z",
+  "publishedAt": "2026-09-11T05:44:43Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.9.0/LifeEasy-v1.9.0.apk",
-    "sha256": "6273973afa640dd8ef4ab3020c2329f42c5a23f7284cec9d048cc73571e6ffb6"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.10.0/LifeEasy-v1.10.0.apk",
+    "sha256": "e7cb3784ad85032780144e623f21fe84abc93e88774a9819e55b2115efad9d21"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "重構智能計算器的分享輸出：海報改為「核心摘要」定位，只展示最重要的結果、核心配置、成就評價及一句分析書提示，不再把完整買法、假設與風險說明塞進同一張 9:16 海報。",
-      "新增「生計易分析書」多頁報告，沿用同一份計算結果資料，完整收錄目標與結果總覽、每個分析區塊、具體購買動作、計算假設，以及智能計算器產生的風險與提醒，避免海報與詳細報告出現兩套數字。",
-      "分析書以 Flutter 實際排版逐頁渲染後封裝成 PDF，因此簡體中文、繁體中文及英文均沿用 App 本身字體渲染，不依賴 PDF 內置拉丁字體；長文字會在分析書頁面自適應顯示。",
-      "分享預覽新增「核心海報 / 分析書」切換；分享時可選「只分享海報」「只分享分析書」「海報 + 分析書」，後兩者會輸出 PDF，組合分享會同時附上 PNG 海報和 PDF 分析書。",
-      "默認智能資產組合及退休智能組合的海報配置進一步簡化為純比例摘要；本金分配、每月投入、分批買入方式、應急金、再平衡規則等深入內容保留到分析書。",
-      "新增核心海報/分析書分流、三種分享選項、三語文案及 PDF 實際生成回歸測試；完整 Flutter 回歸 74 項全部通過，相關靜態分析 0 issues，Web Release 構建成功。"
+      "重做「定期存款」的計算入口，不再只支援「本金 + 利率 → 到期利息」：新增獨立的「反推年化收益率」模式，可直接輸入本金、到期總額與年期，計算等效複合年化（CAGR）、總利潤、總回報率與簡單平均年化。以「10 萬本金、11 年後總共拿 41.8 萬」為例，等效複合年化約 13.89%，而簡單平均年化約 28.91%，介面會明確提示兩種口徑並不相同。",
+      "智能計算器新增「已知到期金額反推年化」模型，簡中、繁中及英文均可直接理解「別人10萬，11年後總共拿41.8萬，年化收益有多少」這類自然語言；條件齊全時不再要求使用者重新填寫資料。",
+      "新增「持續現金流 IRR」模型，支援「投30萬、每年拿3萬、10年後返本金」這類會中途派錢的產品，按每筆現金流真正發生的時間計算 IRR，而不是錯誤地把總利潤平均攤到每年。",
+      "新增「產品收益曲線比較」模型，可把固定複利產品與「本金保留 + 每年固定現金流」產品畫在同一張累計價值曲線上，並自動計算及標記兩邊翻倍時間、曲線反超時間、觀察期末領先產品與差額；曲線同步進入結果頁、核心分享海報及 PDF 分析書。",
+      "為常見的「買樓收租 vs 儲蓄保險」加入預設比較口徑。按 100 萬本金、每年收租 36 萬、儲蓄保險等效 IRR 6.5% 的示例：收租路線累計價值約 2.78 年翻倍，6.5% 複利路線約 11.01 年翻倍，複利路線約第 45.26 年反超線性累計租金路線。系統同時會提示 36% 年現金流比例異常高，以及樓價升跌、空置、稅費、維修、交易成本與保險非保證收益等尚未納入簡化曲線。",
+      "將智能計算首頁的自由輸入框提升到最高操作優先級；「智能資產組合」仍保留推薦入口，但不再擋在自然語言輸入前面。首頁文案與示例亦擴充至年化倒推、現金流 IRR 及產品曲線比較，不再給使用者「主要只會算退休」的感覺。",
+      "以 10 種常見角色做需求矩陣回歸，包括定期產品比較者、收租業主、小生意股東、年輕上班族、買樓首期儲蓄者、目標回報反推者、被動收入規劃者、投資新手、準退休家庭及傳承家庭；測試過程另抓到並修正「10年後大概有多少」這類口語投資預測未能識別的問題。",
+      "新增三語自然語言、數學結果、收益曲線、海報／分析書圖表及 390×844 手機 UI 回歸；完整 Flutter 測試共 84 項全部通過，相關靜態分析 0 issues，Web Release 構建成功。"
     ],
     "en": [
-      "Reworked Smart Calculator sharing into two distinct outputs. The poster is now a concise social summary with only the key result, core allocation, achievement profile and a short pointer to the analysis book, instead of squeezing full actions, assumptions and risks into one 9:16 image.",
-      "Added a multi-page LifeEasy Analysis Book built from the exact same calculation result. It includes the goal and executive summary, every detailed analysis section, concrete purchase actions, calculation assumptions, and Smart Calculator risk notes without recalculating a second set of numbers.",
-      "Analysis pages are rendered with Flutter first and then packaged into PDF, so Simplified Chinese, Traditional Chinese and English use the same app text rendering rather than relying on Latin-only PDF fonts. Long guidance remains auto-fitted inside the report pages.",
-      "The share preview now switches between Core poster and Analysis book. Sharing offers Poster only, Analysis book only, or Poster + analysis book; combined sharing attaches both the PNG poster and PDF report.",
-      "Default Smart Portfolio and retirement portfolio posters now show allocation percentages as the compact core view, while capital splits, monthly actions, staged purchases, emergency funds and rebalance rules move to the analysis book.",
-      "Added regression coverage for the poster/report split, all three share choices, three-language labels and real PDF generation. All 74 Flutter tests pass, targeted static analysis reports 0 issues, and the Web release build succeeds."
+      "Reworked the Time Deposit calculator so it no longer only solves “principal + quoted rate → maturity interest”. A dedicated reverse-annualized-return mode now accepts principal, final value and term, then reports equivalent CAGR, total profit, total return and simple average annual return. For 100k growing to 418k over 11 years, CAGR is about 13.89% while the simple average annual figure is about 28.91%; the UI explicitly explains the difference.",
+      "Added a Smart Calculator scenario that derives annualized return from an observed final value. Simplified Chinese, Traditional Chinese and English can directly understand questions such as “100k becomes 418k after 11 years — what is the annualized return?” and skip already supplied inputs.",
+      "Added recurring cash-flow IRR for products that pay along the way, such as investing 300k, receiving 30k each year for 10 years and getting principal back at the end. IRR is calculated from the timing of the actual cash flows instead of averaging total profit across years.",
+      "Added product return-curve comparison. A compounding product and a “principal retained + fixed annual cash flow” product can now be plotted on one cumulative-value chart with automatic doubling points, crossover, end-of-horizon leader and value gap. The same chart appears in the result view, core share poster and PDF analysis book.",
+      "Added a Rental Property vs Savings Insurance preset. With 1M starting capital, 360k annual rent and 6.5% equivalent insurance IRR, the linear rental route doubles cumulative value in about 2.78 years, the compound route doubles in about 11.01 years, and the compound route overtakes around year 45.26. The app also warns that a 36% annual cash-flow ratio is unusually high and that property price changes, vacancy, taxes, maintenance, transaction costs and non-guaranteed insurance returns are outside the simplified curve.",
+      "Moved the free-form Smart Calculator input ahead of the portfolio shortcut. Smart Portfolio remains a recommended entry, but natural-language calculation is now the primary action. Intro copy and examples now explicitly cover observed returns, cash-flow IRR and product comparisons rather than appearing retirement-centric.",
+      "Added a 10-persona intent matrix covering product shoppers, landlords, business shareholders, young investors, home-deposit savers, target-return solvers, passive-income planners, investment beginners, near-retirement households and legacy-focused households. The exercise also caught and fixed colloquial projection wording such as “roughly how much after 10 years”.",
+      "Added three-language NLP, mathematical, chart, poster/report and 390×844 mobile UI regressions. All 84 Flutter tests pass, targeted static analysis reports 0 issues, and the Web release build succeeds."
     ]
   }
 }
