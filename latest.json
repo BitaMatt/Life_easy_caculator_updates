@@ -1,37 +1,35 @@
 {
   "schema": 1,
   "channel": "stable",
-  "version": "1.11.0",
-  "build": 17,
+  "version": "1.12.0",
+  "build": 18,
   "mandatory": false,
-  "publishedAt": "2026-09-11T06:44:15Z",
+  "publishedAt": "2026-09-11T09:47:32Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.11.0/LifeEasy-v1.11.0.apk",
-    "sha256": "d4f23a22f2a360981118cc52a53aba88cf5395b656508fc65b7ad1c6fa4b2922"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.12.0/LifeEasy-v1.12.0.apk",
+    "sha256": "7553e03f9801dd7cb48f018ee5e3415d93f9e87bf01fc4d5639e3b80b708f808"
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "新增「逐年產品利益表比較」：不再要求所有產品先被簡化成固定年化或固定派息。使用者可直接貼入兩份產品的逐年數據，統一比較 IRR、累計投入、總回報、回本、純現金回本、翻倍、反超、指定年期價值與差額。",
-      "逐年資料支援兩種常見口徑：`年份 + 累計可取總價值`，或 `年份 + 當年淨現金流 + 年末剩餘／退保價值`。支援從 Excel / PDF 複製後常見的逗號、空格、Tab、豎線、冒號與分號格式，並識別萬／千／k／m 等金額單位；表頭和說明文字會自動略過。",
-      "對分期保費、追加投入等情況加入「負現金流」語義：收到錢填正數，後續供款填負數。IRR 按真實正負現金流時點計算；收益曲線則以淨累計價值呈現，避免把額外投入誤當成產品收益，並可正確顯示早期負淨值與零軸。",
-      "原有「買樓收租 vs 儲蓄保險」等快速比較結果新增「換成逐年真實數據精確比較」入口，會保留兩邊名稱與起始本金，只要求補兩份逐年表，不用重新輸入已知資料。",
-      "Android / iOS 的逐年表輸入可直接使用現有保單 OCR 從相簿掃描利益表。OCR 會把逐年累計保費、提取／派發和退保價值轉成通用現金流格式；轉換後仍要求使用者核對，避免把 OCR 誤識別直接當成財務結果。",
-      "智能計算器新增對「利益表、退保價值表、逐年現金流、year-by-year benefit table」等自然語言意圖的優先識別；即使句子同時包含「退休／保險」，只要明確要求比較兩份逐年表，也不會再被錯誤分流到單一退休或保險模型。",
-      "增加資料安全欄杆：逐年表不能留空直接生成；兩份表格式混用、起始本金差距過大、指定年期超出共同資料範圍時均會明確提示或自動縮回可比較年期。",
-      "角色需求矩陣擴充至 15 類，加入保險顧問、債券產品比較者、銀行理財產品客戶、英文保單分析使用者及退休保單精算比較者；完整 Flutter 回歸 94 項全部通過，相關新代碼靜態分析無 error/warning，Web Release 構建成功。"
+      "新增「單一真實產品分析」：只有一份保單／理財／債券利益表時，不再要求湊第二份產品。貼入逐年利益表即可直接計算真實 IRR、累計投入、總回報、回本、純現金回本、翻倍與指定年期可取價值，收益圖會同時畫出產品累計價值與累計投入本金。",
+      "智能輸入框支援「整份資料直接貼入」：例如同一句寫明「本金100萬、重點看第5年」，再附上逐年表，系統會自動抽取本金、指定年期與表格本身；資料齊全時可零追問直接生成分析，不需要把同一張表再貼第二次。",
+      "多產品比較由兩產品擴充到 3–4 份真實利益表同場分析。結果同時提供 IRR 排名、指定年期可取價值排名、每份產品回本／翻倍節點，以及所有產品兩兩之間的反超時間，並特別提示「期末金額最高」與「IRR最高」可能不是同一產品。",
+      "收益曲線底層升級為多序列，可在同一張圖展示最多四份產品；第三、第四條曲線、圖例及節點同步支援結果頁、核心分享海報和分析書，不再只能用 A/B 兩條線。",
+      "自然語言分流進一步細分「一份／兩份／三份／四份利益表」：一份走單產品體檢、兩份走精確比較、三至四份走多產品排名；「第20年排名／第10年差額」等指定年份亦會直接帶入，不再默認使用表格最後一年。",
+      "Android / iOS 的保單 OCR 入口已擴展到單產品、產品 C 及產品 D 的逐年表輸入；OCR 後仍保留人工核對步驟，避免誤識別被直接當成財務結論。",
+      "對抗性與角色測試擴充至 18 類常見使用者，包括單一保單體檢者、三產品同場比較者及四產品批量篩選者；新增多序列收益圖、自然語言整表直貼、3–4 產品排名與 390×844 手機流程回歸。完整 Flutter 回歸 103 項全部通過，相關新代碼靜態分析 0 issues，Web Release 構建成功。"
     ],
     "en": [
-      "Added Year-by-year Product Table Comparison. Products no longer need to be reduced to a fixed annual return or fixed payout first: paste two real yearly schedules and compare IRR, cumulative contributions, total return, payback, cash-only payback, doubling, crossover, horizon value and value gap on one basis.",
-      "Supports two common table shapes: `year + cumulative redeemable total value`, or `year + net cash flow that year + end-of-year residual/surrender value`. Pasted Excel/PDF-style commas, spaces, tabs, pipes, colons and semicolons are accepted, along with common amount suffixes such as 萬, k and m; headers and notes are ignored.",
-      "Added signed cash-flow semantics for installment premiums and later contributions: money received is positive and later funding is negative. IRR uses the actual signed yearly cash flows, while the chart shows net cumulative value so extra contributions are not misreported as investment gains. Negative early values and a zero axis are supported.",
-      "Existing quick comparisons such as Rental Property vs Savings Insurance now offer a Refine with real year-by-year data action. Product names and starting capital carry forward automatically, leaving only the two detailed schedules to provide.",
-      "On Android/iOS, yearly schedules can reuse the existing policy OCR flow to scan a benefit table from the photo library. Parsed cumulative premiums, withdrawals/payouts and surrender values are converted to the generic cash-flow format, with an explicit user review step before calculation.",
-      "Smart Calculator intent routing now prioritizes explicit benefit-table / surrender-value / year-by-year cash-flow comparison requests. A request mentioning retirement or insurance will still enter the detailed comparison model when the user clearly asks to compare two real schedules.",
-      "Added guardrails for missing tables, mixed table shapes, materially different starting capital and requested horizons beyond the shared data range. Required yearly tables can no longer be skipped silently.",
-      "Expanded the persona demand matrix to 15 user types, adding insurance advisers, bond-product comparers, bank wealth-product clients, English policy-analysis users and retirement-policy comparison users. All 94 Flutter tests pass, new-code static analysis has no errors/warnings, and the Web release build succeeds."
+      "Added Single Real-Product Analysis. One policy, wealth-management or bond schedule can now be analyzed on its own for real IRR, cumulative contributions, total return, total-value payback, cash-only payback, doubling and redeemable value at a chosen horizon. The chart compares product value with cumulative contributed capital.",
+      "The free-form Smart input can now accept an entire schedule directly. If the same input states the starting capital and focus year and includes the yearly rows, those values are reused automatically and the analysis can run with zero follow-up questions.",
+      "Expanded real-table comparison to 3–4 products side by side. Results include IRR ranking, end-value ranking, payback and doubling for each product, plus pairwise crossover timing across every selected product. The UI explicitly distinguishes highest end value from highest IRR.",
+      "Upgraded the growth-chart model from two fixed series to multi-series so up to four product curves, legends and milestones render consistently in the result view, core share poster and analysis book.",
+      "Natural-language routing now distinguishes one, two, three and four benefit tables and carries focus-year phrases such as “year 20 ranking” into the correct analysis instead of silently defaulting to the last table year.",
+      "Android/iOS policy OCR is now available for single-product input and Product C / D tables as well, while still requiring user review before calculation.",
+      "Expanded the persona matrix to 18 common user types and added regressions for direct whole-table paste, multi-series charts, 3–4 product ranking and 390×844 mobile flows. All 103 Flutter tests pass, targeted static analysis reports 0 issues, and the Web release build succeeds."
     ]
   }
 }
