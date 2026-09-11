@@ -1,35 +1,53 @@
 {
-  "schema": 1,
+  "schema": 2,
   "channel": "stable",
-  "version": "1.12.0",
-  "build": 18,
+  "version": "1.13.0",
+  "build": 19,
   "mandatory": false,
-  "publishedAt": "2026-09-11T09:47:32Z",
+  "publishedAt": "2026-09-11T11:07:25Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.12.0/LifeEasy-v1.12.0.apk",
-    "sha256": "7553e03f9801dd7cb48f018ee5e3415d93f9e87bf01fc4d5639e3b80b708f808"
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0.apk",
+    "sha256": "633399c9fae53b992c61118c5227931007d50878423f552b851f64d8eaf3172b",
+    "size": 45313337,
+    "abis": {
+      "arm64-v8a": {
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0-arm64-v8a.apk",
+        "sha256": "9af8b150df974209e18f13de7ff52a78eebdf80eba43ae6edb928bec3810c220",
+        "size": 18994686
+      },
+      "armeabi-v7a": {
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0-armeabi-v7a.apk",
+        "sha256": "b9854ac84267c0eef1c8c131ac26ff2aab7d49548d709e3c3e1b92e091572bc4",
+        "size": 17869124
+      },
+      "x86_64": {
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.13.0/LifeEasy-v1.13.0-x86_64.apk",
+        "sha256": "20694e8f33416640abb16e822bf12d4e744076e1801adef5a41f90615fee678e",
+        "size": 19261359
+      }
+    }
   },
   "web": {
     "url": "https://bitamatt.github.io/Life_easy_caculator_updates/"
   },
   "notes": {
     "zh": [
-      "新增「單一真實產品分析」：只有一份保單／理財／債券利益表時，不再要求湊第二份產品。貼入逐年利益表即可直接計算真實 IRR、累計投入、總回報、回本、純現金回本、翻倍與指定年期可取價值，收益圖會同時畫出產品累計價值與累計投入本金。",
-      "智能輸入框支援「整份資料直接貼入」：例如同一句寫明「本金100萬、重點看第5年」，再附上逐年表，系統會自動抽取本金、指定年期與表格本身；資料齊全時可零追問直接生成分析，不需要把同一張表再貼第二次。",
-      "多產品比較由兩產品擴充到 3–4 份真實利益表同場分析。結果同時提供 IRR 排名、指定年期可取價值排名、每份產品回本／翻倍節點，以及所有產品兩兩之間的反超時間，並特別提示「期末金額最高」與「IRR最高」可能不是同一產品。",
-      "收益曲線底層升級為多序列，可在同一張圖展示最多四份產品；第三、第四條曲線、圖例及節點同步支援結果頁、核心分享海報和分析書，不再只能用 A/B 兩條線。",
-      "自然語言分流進一步細分「一份／兩份／三份／四份利益表」：一份走單產品體檢、兩份走精確比較、三至四份走多產品排名；「第20年排名／第10年差額」等指定年份亦會直接帶入，不再默認使用表格最後一年。",
-      "Android / iOS 的保單 OCR 入口已擴展到單產品、產品 C 及產品 D 的逐年表輸入；OCR 後仍保留人工核對步驟，避免誤識別被直接當成財務結論。",
-      "對抗性與角色測試擴充至 18 類常見使用者，包括單一保單體檢者、三產品同場比較者及四產品批量篩選者；新增多序列收益圖、自然語言整表直貼、3–4 產品排名與 390×844 手機流程回歸。完整 Flutter 回歸 103 項全部通過，相關新代碼靜態分析 0 issues，Web Release 構建成功。"
+      "大幅優化 Android 更新包下載體積：直接 APK 渠道改用壓縮 JNI 原生庫。以本地同一套 Debug 包實測，APK 由約 197.9 MB 降到約 107.5 MB；正式 Release 仍會由 CI 重新量測與校驗，不以 Debug 數字冒充正式包大小。",
+      "OTA 更新新增 ABI 小包機制：正式發布時同時產生通用 APK、arm64-v8a、armeabi-v7a 與 x86_64 專用 APK。升級到本版本後，後續 Android 更新會優先按裝置 ABI 下載對應小包，無法識別 ABI 時才安全回退通用 APK；舊版清單格式仍完全相容。",
+      "更新清單升級到 schema 2，可記錄每個 APK 的 URL、SHA-256 與檔案大小；發布流程會同步把四種 APK 上傳到公開更新倉，保留原本通用 APK 作為兼容後備。",
+      "智能計算器補強真實口語與錯字理解。「10萬本金10年翻10倍的年化日是多少？」現在可直接理解為本金 10 萬、10 年後變成原本金的 10 倍，零追問反推等效複合年化約 25.89%。同時支援 `10w`、`10年x10`、`10x`、`翻十倍`、`年化幾多/年化？` 等常見輸入。",
+      "擴大「正常人打字」對抗測試：補上省略標點、口語粵語、k/w 縮寫、簡短 IRR 問法、`每月再投`、`最後幾多`、`保單表`、`比下` 等寫法，避免智能計算器只對標準範例句有效。",
+      "「可以這樣說」不再一次鋪滿十幾個例子，改成「常用、年化/回報、存錢/目標、產品分析/比較、組合/退休」五類切換；每次只展示當前類別 4–5 個例子，手機首頁更易掃讀。",
+      "完整 Flutter 回歸 109 項全部通過；新增 Android ABI 選包單元測試、390×844 錯字輸入流程與分類示例 UI 測試，相關 Dart 靜態分析 0 issues，Android Debug 構建及 JNI 壓縮包驗證成功。"
     ],
     "en": [
-      "Added Single Real-Product Analysis. One policy, wealth-management or bond schedule can now be analyzed on its own for real IRR, cumulative contributions, total return, total-value payback, cash-only payback, doubling and redeemable value at a chosen horizon. The chart compares product value with cumulative contributed capital.",
-      "The free-form Smart input can now accept an entire schedule directly. If the same input states the starting capital and focus year and includes the yearly rows, those values are reused automatically and the analysis can run with zero follow-up questions.",
-      "Expanded real-table comparison to 3–4 products side by side. Results include IRR ranking, end-value ranking, payback and doubling for each product, plus pairwise crossover timing across every selected product. The UI explicitly distinguishes highest end value from highest IRR.",
-      "Upgraded the growth-chart model from two fixed series to multi-series so up to four product curves, legends and milestones render consistently in the result view, core share poster and analysis book.",
-      "Natural-language routing now distinguishes one, two, three and four benefit tables and carries focus-year phrases such as “year 20 ranking” into the correct analysis instead of silently defaulting to the last table year.",
-      "Android/iOS policy OCR is now available for single-product input and Product C / D tables as well, while still requiring user review before calculation.",
-      "Expanded the persona matrix to 18 common user types and added regressions for direct whole-table paste, multi-series charts, 3–4 product ranking and 390×844 mobile flows. All 103 Flutter tests pass, targeted static analysis reports 0 issues, and the Web release build succeeds."
+      "Significantly reduced Android direct-APK download size by switching native JNI libraries to compressed APK packaging. On the same local Debug build, APK size dropped from about 197.9 MB to about 107.5 MB. Release size is measured again in CI rather than presenting Debug numbers as production figures.",
+      "Added ABI-aware OTA packages. Releases now publish a universal APK plus arm64-v8a, armeabi-v7a and x86_64 standalone APKs. After installing this version, future Android updates prefer the device-specific APK and safely fall back to the universal package when ABI detection is unavailable; older manifests remain compatible.",
+      "Upgraded update metadata to schema 2 with URL, SHA-256 and file size for every Android artifact, while retaining the universal APK as the backward-compatible fallback.",
+      "Hardened Smart Calculator handling of real typing and typos. `100k principal, 10 years, 10x — what annualized return?` and the Chinese typo form `10萬本金10年翻10倍的年化日是多少？` now resolve directly to an equivalent compounded annual return of about 25.89%, with support for `10w`, `10年x10`, `10x`, Chinese multiple wording and short annual-return questions.",
+      "Expanded noisy-input regression coverage for omitted punctuation, Cantonese phrasing, k/w abbreviations, short IRR questions, monthly-additional-investment wording, shorthand policy-table wording and casual comparison phrases.",
+      "Reorganized the Smart Calculator example area into five filters — Common, Return/IRR, Goals, Products, and Portfolio — so the mobile home screen shows only 4–5 relevant examples at a time instead of a long unstructured chip list.",
+      "All 109 Flutter tests pass. Added ABI artifact-selection tests, a 390×844 typo-input flow and categorized-example UI regression; targeted Dart analysis reports 0 issues, and the Android Debug build with compressed JNI packaging succeeds."
     ]
   }
 }
