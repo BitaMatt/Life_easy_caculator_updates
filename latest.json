@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.15.2",
-  "build": 23,
+  "version": "1.16.0",
+  "build": 24,
   "mandatory": false,
-  "publishedAt": "2026-09-12T07:31:07Z",
+  "publishedAt": "2026-09-12T14:33:48Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2.apk",
-    "sha256": "44df89225c258377b0d86b792f7f2b641171fb15a1e6436f1255573a1dd96b5e",
-    "size": 45495833,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.16.0/LifeEasy-v1.16.0.apk",
+    "sha256": "da29d98cebb844590b7f04f99851e8b95e422010919e358fc57c0d487abdcf6a",
+    "size": 45641361,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2-arm64-v8a.apk",
-        "sha256": "dd6cf09b5261932e65fbac43144abe6de50d73fefbf22fced9038269ba575f2f",
-        "size": 19054626
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.16.0/LifeEasy-v1.16.0-arm64-v8a.apk",
+        "sha256": "66d362db8ced2f5d66182cea9499f605fde1ea7835a736c00011fdf4f0331176",
+        "size": 19099374
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2-armeabi-v7a.apk",
-        "sha256": "b28cd623c5cc904447e699b6ee6eac392963b4af383885c4391bd364ddce1f29",
-        "size": 17933744
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.16.0/LifeEasy-v1.16.0-armeabi-v7a.apk",
+        "sha256": "b869cbf0c8b6f416ed3452d88dfcbace8debf267c30838548dc71ac9011f3cbe",
+        "size": 17987268
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2-x86_64.apk",
-        "sha256": "77eaac8abce441a1af7aa54361d18e0fef17459257fb5d5d287d17dfe20fcc42",
-        "size": 19319291
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.16.0/LifeEasy-v1.16.0-x86_64.apk",
+        "sha256": "872816c86ab3123bc34a2881d8c8449d0a82d019c4cb3f9a57da480afa5a91ec",
+        "size": 19367219
       }
     }
   },
@@ -32,18 +32,20 @@
   },
   "notes": {
     "zh": [
-      "產品比較輸入由「選完產品類型後再自己寫一段收益描述」改成類型專屬欄位。儲蓄保險直接填演示／假設年化、每年提取、開始提取年份及可選停止年份；定期／存款直接填年利率；基金／ETF／股票填年化總回報及可選現金派息；買樓收租填樓價升值率與每年淨租金；債券／派息產品填資產升值率與每年派息／利息。只有「其他／自訂」才保留自由文字。",
-      "修正儲蓄保險「每年提取」的模型。提款現在會先從當年保單價值扣除，之後只由剩餘價值繼續增長；提款本身會作為已收現金計入總價值與 IRR，不再出現「提款後保單本金仍完整複利」造成收益虛高。",
-      "結果頁會把「每年現金收入」與「每年提取」分開顯示，並標明提取期間；分享摘要亦會顯示由第幾年開始每年提取多少，避免把租金／派息與本金提款混為一談。",
-      "保留舊口語輸入相容性，例如「年化6.5%，第4年開始每年提取5萬，到第10年停止」仍可直接識別並轉成結構化提款參數。",
-      "新增結構化產品比較與提款現金流回歸，完整 Flutter 測試擴充至 128 項並全部通過；390×844 手機流程已實際走完「儲蓄保險提款 vs 買樓收租」到結果頁，Web Release 構建成功。"
+      "新增「組合現金流」計算器，可把儲蓄保險、定期／存款、基金／ETF／股票、買樓收租、債券／派息產品及自訂資產放進同一個產品清單，最多同時計算 8 個產品。每個產品會按類型顯示專屬參數，不需要再自行用文字描述收益規則。",
+      "新增生活消費模型：輸入目前每月開支、每年開支增長／通脹及計算年期後，系統逐年計算產品產生的現金收入、當年生活開支及「真正可支配現金流 = 產品現金收入 − 開支」。可選擇把每年現金結餘／缺口累積進總資產，直接觀察生活消費如何影響長期淨資產。",
+      "結果同時提供兩條獨立比例尺曲線：「淨資產變化」及「每年可支配現金流」，避免數百萬資產把幾萬元現金流壓成直線；另提供首次完全覆蓋開支年份、期末開支覆蓋率、累計可支配現金、期末各產品資產／現金貢獻及可摺疊逐年明細。",
+      "不同產品使用不同現金流規則：儲蓄保險提款會真實扣減保單餘額；定期可選利息滾存或直接取息；基金／ETF 的「總回報」會拆成淨值增長與現金派息，避免把 7% 總回報 + 2% 派息錯算成 9%；收租物業可獨立設定樓價及租金增長；債券／派息產品分開計算資產升值與現金派息。",
+      "「投資 · 理財」首頁新增組合現金流入口；智能計算器的被動收入／被動收入目標／本金派息結果亦新增「用多產品組合繼續計算」，並會把已知的月開支帶入新頁。",
+      "新增產品現金流數值回歸與 390×844 手機實操回歸，涵蓋提款扣減、派息防重複計算、通脹、定期取息／滾存、動態新增產品及類型切換。完整 Flutter 測試擴充至 133 項並全部通過，360×640 特大字及 390×844 特大字均無 overflow，Web Release 構建成功。"
     ],
     "en": [
-      "Product Comparison now uses type-specific structured inputs instead of asking users to describe return parameters after already choosing a product type. Savings insurance gets annual growth, annual withdrawal, withdrawal start year and optional end year; deposits get an annual rate; funds/ETFs/stocks get total return plus optional cash dividends; rental property gets appreciation plus net rent; bonds/income products get asset growth plus annual distributions. Only Other / Custom keeps free text.",
-      "Fixed savings-insurance withdrawal modelling. Scheduled withdrawals now reduce policy value first, and only the remaining balance continues compounding. Withdrawn cash is counted as received cash in total value and IRR instead of being added on top of an untouched policy balance.",
-      "Result sections now separate annual income from annual withdrawals and show the withdrawal period. Poster summaries also state the annual withdrawal amount and start year.",
-      "Legacy natural-language inputs remain compatible, including phrases such as `6.5% annual growth, withdraw 50k per year starting in year 4 until year 10`.",
-      "Added structured-comparison and withdrawal-cash-flow regressions. The full Flutter suite now has 128 passing tests; the 390×844 mobile flow was exercised end-to-end through a savings-insurance-withdrawal vs rental-property comparison, and the Web release build succeeds."
+      "Added Portfolio Cash Flow, a multi-product calculator that combines savings insurance, deposits, funds/ETFs/stocks, rental property, bonds/income products and custom assets on one timeline, with up to eight products and type-specific structured inputs.",
+      "Added spending modelling. Enter current monthly spending, annual expense inflation/growth and the projection horizon to calculate product cash income, living expenses and true disposable cash flow (`product cash income - spending`) year by year. Disposable surplus/deficit can optionally accumulate into net assets.",
+      "Added separate net-asset and disposable-cash-flow charts so large asset values do not flatten smaller cash-flow movements. Results also show the first fully covered year, ending coverage ratio, cumulative disposable cash, final product breakdown and a collapsible year-by-year table.",
+      "Product-specific cash-flow rules prevent misleading totals: savings-insurance withdrawals reduce policy value; deposits can reinvest or pay out interest; market total return is split between NAV growth and cash yield to avoid double counting; rental property separates appreciation from rent; income products separate asset growth from distributions.",
+      "Added a Portfolio Cash Flow card under Investing and a continuation action from Smart Calculator passive-income results, carrying known monthly spending into the multi-product planner.",
+      "Added numerical and 390×844 mobile regressions for withdrawals, payout double-count protection, inflation, deposit payout/reinvestment, dynamic products and type switching. The full Flutter suite now has 133 passing tests, large-text 360×640 and 390×844 layouts have no overflow, and the Web release build succeeds."
     ]
   }
 }
