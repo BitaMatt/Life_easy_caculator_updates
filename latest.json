@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.14.0",
-  "build": 20,
+  "version": "1.15.0",
+  "build": 21,
   "mandatory": false,
-  "publishedAt": "2026-09-11T23:45:38Z",
+  "publishedAt": "2026-09-12T04:18:59Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0.apk",
-    "sha256": "104f46ed3a645301cf174a61ff22dce010994340abccac9791601c06d0dfd291",
-    "size": 45391137,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.0/LifeEasy-v1.15.0.apk",
+    "sha256": "523fbab2a8e9a94de0de9ba3148f66251a3c09a5d51a6ac1b70bfc6436ba0b66",
+    "size": 45455765,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0-arm64-v8a.apk",
-        "sha256": "dc3b01517bff80527e47f2f013dea03714055c96e1e6a0db2194987d7d9098c2",
-        "size": 19017338
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.0/LifeEasy-v1.15.0-arm64-v8a.apk",
+        "sha256": "817b8cbf3aec8f9be093e4532c9176da98db89d13062b601aa976fb927a28dd7",
+        "size": 19041042
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0-armeabi-v7a.apk",
-        "sha256": "b423de3f7de406be8c9d9a7942ab78d3eae0045a38284468c043efc0b763032b",
-        "size": 17898960
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.0/LifeEasy-v1.15.0-armeabi-v7a.apk",
+        "sha256": "892052ef13676ab876002d5e398bdeeed715ef4522262724768590826e6e4ec6",
+        "size": 17919692
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.14.0/LifeEasy-v1.14.0-x86_64.apk",
-        "sha256": "f285a15e9c0a3d2425f5e589cf9ea093788b55981982710b9c96a73eea7794bc",
-        "size": 19286671
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.0/LifeEasy-v1.15.0-x86_64.apk",
+        "sha256": "547a56a55d7fd2af7c11a2cec3c7ae893cc86315cd4fd70a420406dfad31a3b6",
+        "size": 19306863
       }
     }
   },
@@ -32,22 +32,20 @@
   },
   "notes": {
     "zh": [
-      "修正智能計算器官方範例本身都可能無法識別的漏洞：`10萬放11年，最後總共拿41.8萬，真實年化多少` 現在會直接識別為本金 10 萬、年期 11 年、到期總額 41.8 萬，零追問算出等效複合年化約 13.89%。同時新增「所有畫面官方範例 × 簡中／繁中／英文」逐句回歸，避免只測相似句而漏掉使用者真正按到的範例。",
-      "產品收益比較由固定的「收租 vs 複利」模板升級為參數化比較：先選兩邊產品類型，再用日常說法填少量條件即可畫曲線。支援儲蓄保險、定期／存款、基金／ETF／股票、買樓收租、債券／派息產品及自訂產品；同類產品亦可直接比較，例如「定期 A 3% vs 定期 B 4%」。",
-      "產品比較不再要求一定提供逐年利益表。除了直接年化與每年現金收入，亦可只輸入「第 11 年總值 41.8 萬」或「第 11 年累計收益 31.8 萬」，由系統反推等效增長曲線，再標記翻倍、反超、指定年期價值、差額及觀察期 IRR；真實逐年利益表保留為可選的精確模式。",
-      "全面重審分享海報的資訊優先級，統一採用「核心計算結果 + 決定結果的主要輸入」原則。定期存款海報現在明確顯示本金、年利率、存期、計息方式與到期本息；定投、儲蓄目標、派息、開支覆蓋、退休、房貸、分期、個稅、預算、儲蓄保險、港澳台按揭、AA、匯率、油費、健康、高端消費與單位換算等分享海報亦補齊各自的關鍵輸入。",
-      "儲蓄保險海報另作密度優化：退保模式會把年繳保費與繳費年期、退保年度、退保總值等核心資料放在同一張海報；領取規劃模式則顯示保費／年期、演示利率、開始領取年度、每年領取、累計領取、期末價值與淨收益，避免把所有明細硬塞到分享圖造成溢出。",
-      "普通計算器海報的摘要文字改為依可用空間自動縮放，不再以固定兩行加省略號截掉重要輸入；海報核心欄位在 390×844 手機分享預覽中加入實際布局回歸。",
-      "完整 Flutter 回歸 120 項全部通過；針對本次修改檔案的 Dart 靜態分析 0 issues，Web Release 構建成功。"
+      "儲蓄保險／IRR 領取規劃新增三種領取方式：保留原本固定金額，並新增「分段百分比」與「反推最大領取」。分段模式可直接輸入例如「4到10年拿4%，11到20年拿5%，21到30年拿6%，31到40年拿7%，41年後拿8%」，亦支援 `4-10:4%; 11-20:5%; 41+:8%` 等簡寫。",
+      "分段百分比可選擇按「原始總保費本金」或「當年帳戶／保單價值」計算，避免百分比口徑不清；逐年現金流、累計領取、期末保單價值與全周期 IRR 會按同一套規則重新計算。",
+      "新增 IRR 反推領取策略。使用者輸入目標／假設年化回報、開始領取年度、測算終止年度、每隔幾年加碼、每次加多少、最高領取率及期末本金底線後，系統以數值搜尋找出「在守住本金底線前提下，起始領取率盡量高」的方案。",
+      "反推結果同時提供 100% 理想情景（明確標示非保證）、90% 較差情景與 80% 壓力情景；三個情景會分別顯示可持續起始領取率、完整分段領取路徑、累計領取、期末本金及實際現金流 IRR，避免把演示回報誤當成保證收益。",
+      "智能資產組合與退休組合補齊收益來源拆解。派息／利息不再只隱含在總年化內，而會分開顯示現金利息、債券票息／分派、股票／ETF 派息，以及保單價值、債券淨值、股票／ETF 淨值變動；各來源加總會與總投資收益對得上，避免重複計算。",
+      "完整 Flutter 回歸擴充至 123 項並全部通過；Web Release 構建成功，分段領取自然語句解析、按本金／按帳戶價值計算及 100%／90%／80% 反推壓力情景均有專項測試。"
     ],
     "en": [
-      "Fixed a gap where even an example shown by the Smart Calculator could fail to parse. `100k left for 11 years and 418k received in total — what is the real annualized return?` now resolves directly to 100k principal, 11 years and 418k final value, producing about 13.89% equivalent CAGR with no follow-up questions. Added a regression that checks every visible official example in Simplified Chinese, Traditional Chinese and English instead of only testing similar phrases.",
-      "Upgraded product return comparison from a fixed rental-vs-compound template to parameterized comparison. Pick each product type and describe only a few return assumptions in normal language. Savings insurance, time deposits, funds/ETFs/stocks, rental property, bonds/income products and custom products are supported, including same-type comparisons such as Deposit A at 3% vs Deposit B at 4%.",
-      "Year-by-year tables are no longer mandatory for ordinary comparisons. Besides direct annual returns and yearly cash income, the app can accept a single observation such as `year 11 total value 418k` or `year 11 cumulative profit 318k`, derive an equivalent growth curve, and mark doubling, crossover, horizon values, gaps and estimated horizon IRR. Real yearly schedules remain available as the optional precision mode.",
-      "Audited share posters around one rule: show the core calculation result together with the main inputs that determine it. The Time Deposit poster now explicitly includes principal, annual rate, term, interest basis and maturity value; DCA, goals, dividends, expense coverage, retirement, mortgage, installments, tax, budget, insurance, regional mortgage, split bills, FX, commute cost, health, luxury-cost and unit-conversion posters were audited and supplemented as well.",
-      "Rebalanced Savings Insurance poster density. Surrender posters now surface annual premium/payment term, surrender year and surrender value, while payout-plan posters surface premium/term, illustration rate, payout start, annual payout, cumulative payout, final policy value and net gain without overflowing the social poster.",
-      "Direct-calculator poster summaries now auto-fit to available space rather than truncating important assumptions with a fixed two-line ellipsis. Added real 390×844 share-preview layout regression for the poster audit.",
-      "All 120 Flutter tests pass; targeted Dart analysis for every file changed in this release reports 0 issues, and the Web release build succeeds."
+      "Savings-insurance / IRR payout planning now supports three withdrawal methods: the existing fixed-amount mode plus tiered-percentage withdrawals and reverse-optimized withdrawals. Tiered rules accept natural language such as `years 4-10: 4%, 11-20: 5%, 21-30: 6%, 31-40: 7%, 41+: 8%` as well as compact schedule syntax.",
+      "Tiered percentages can be based on either original gross premium or current policy/account value, removing ambiguity around what the withdrawal percentage applies to. Yearly cash flow, cumulative withdrawals, ending policy value and full-period IRR are recalculated on the same basis.",
+      "Added reverse withdrawal optimization. Given an assumed/target annual return, withdrawal start year, planning horizon, step interval, step increase, maximum withdrawal rate and ending-principal floor, the app numerically searches for the highest sustainable starting withdrawal rate that still preserves the selected principal floor.",
+      "Optimization returns three scenarios side by side: ideal 100% realization (explicitly marked non-guaranteed), lower 90% realization and 80% stress realization. Each scenario shows the sustainable starting rate, full stepped withdrawal path, cumulative withdrawals, ending principal and realized cash-flow IRR.",
+      "Smart portfolio and retirement portfolio results now break total return into actual sources instead of hiding income inside one blended annual rate: cash interest, bond coupon/distribution, stock/ETF dividends, plus insurance-value, bond-NAV and stock/ETF-NAV changes. Source totals reconcile to total projected investment profit without double-counting.",
+      "The full Flutter regression suite now contains 123 passing tests; the Web release build succeeds, including dedicated coverage for natural-language tiered schedules, principal-vs-balance withdrawal bases and 100%/90%/80% optimization stress scenarios."
     ]
   }
 }
