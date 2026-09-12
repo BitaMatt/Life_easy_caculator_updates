@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.15.1",
-  "build": 22,
+  "version": "1.15.2",
+  "build": 23,
   "mandatory": false,
-  "publishedAt": "2026-09-12T05:09:11Z",
+  "publishedAt": "2026-09-12T07:31:07Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.1/LifeEasy-v1.15.1.apk",
-    "sha256": "d8b9d36802a01e3915309c6af8e1154bdb56e10c54bbe68443592b02322ee7b4",
-    "size": 45456329,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2.apk",
+    "sha256": "44df89225c258377b0d86b792f7f2b641171fb15a1e6436f1255573a1dd96b5e",
+    "size": 45495833,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.1/LifeEasy-v1.15.1-arm64-v8a.apk",
-        "sha256": "318915b2a3bc642c3822470b8839787050bc79b7b3905cd3e9fd1e1a06695011",
-        "size": 19042002
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2-arm64-v8a.apk",
+        "sha256": "dd6cf09b5261932e65fbac43144abe6de50d73fefbf22fced9038269ba575f2f",
+        "size": 19054626
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.1/LifeEasy-v1.15.1-armeabi-v7a.apk",
-        "sha256": "555720877df2dca160751d5def90db435ded31eef39438d3f3c3dfb32de5eee8",
-        "size": 17918804
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2-armeabi-v7a.apk",
+        "sha256": "b28cd623c5cc904447e699b6ee6eac392963b4af383885c4391bd364ddce1f29",
+        "size": 17933744
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.1/LifeEasy-v1.15.1-x86_64.apk",
-        "sha256": "f197acfc9fdd3a092a175c2a6b35fe9f854c499015cb6c026f16061e47df5552",
-        "size": 19307359
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.15.2/LifeEasy-v1.15.2-x86_64.apk",
+        "sha256": "77eaac8abce441a1af7aa54361d18e0fef17459257fb5d5d287d17dfe20fcc42",
+        "size": 19319291
       }
     }
   },
@@ -32,18 +32,18 @@
   },
   "notes": {
     "zh": [
-      "修正產品比較逐題填寫時的輸入法狀態問題：前一題「本金」使用數字鍵盤後，下一題「收益參數」現在會強制建立新的文字輸入連線，不再沿用數字鍵盤。`年化6.5%`、`第11年總值41.8萬`、`每年租金36萬 + 樓價年升2%` 等中文／口語收益描述可直接輸入。",
-      "補上所有智能計算器問題定義的輸入型別審查：凡是文字、名稱、逐年表或口語參數都必須走文字輸入；純數字題才允許套用數字鍵盤與千分位 formatter，避免再出現「示例寫中文、正式欄位只能輸數字」。",
-      "主頁改為分類導航，不再把住房、收支、日常、健康、換算、投資理財、港澳台等全部板塊一次垂直鋪滿。分類導航移到首頁提示後方，選擇分類後只顯示該類工具，手機主頁大幅縮短。",
-      "手機首頁工具卡改為兩欄緊湊布局；「開支覆蓋」在「投資 · 理財」分類內提前到退休規劃旁邊，390×844 手機可由分類導航快速進入，不再需要一路滑到首頁最底。",
-      "新增真實 UI 回歸：覆蓋「本金數字題 → 中文收益參數題」鍵盤切換，以及「主頁 → 投資理財 → 開支覆蓋」導航。完整 Flutter 回歸擴充至 126 項並全部通過，Web Release 構建成功。"
+      "產品比較輸入由「選完產品類型後再自己寫一段收益描述」改成類型專屬欄位。儲蓄保險直接填演示／假設年化、每年提取、開始提取年份及可選停止年份；定期／存款直接填年利率；基金／ETF／股票填年化總回報及可選現金派息；買樓收租填樓價升值率與每年淨租金；債券／派息產品填資產升值率與每年派息／利息。只有「其他／自訂」才保留自由文字。",
+      "修正儲蓄保險「每年提取」的模型。提款現在會先從當年保單價值扣除，之後只由剩餘價值繼續增長；提款本身會作為已收現金計入總價值與 IRR，不再出現「提款後保單本金仍完整複利」造成收益虛高。",
+      "結果頁會把「每年現金收入」與「每年提取」分開顯示，並標明提取期間；分享摘要亦會顯示由第幾年開始每年提取多少，避免把租金／派息與本金提款混為一談。",
+      "保留舊口語輸入相容性，例如「年化6.5%，第4年開始每年提取5萬，到第10年停止」仍可直接識別並轉成結構化提款參數。",
+      "新增結構化產品比較與提款現金流回歸，完整 Flutter 測試擴充至 128 項並全部通過；390×844 手機流程已實際走完「儲蓄保險提款 vs 買樓收租」到結果頁，Web Release 構建成功。"
     ],
     "en": [
-      "Fixed product-comparison input mode switching. After a numeric principal question, the following return-parameter question now rebuilds its text input connection instead of inheriting the numeric IME. Natural-language entries such as `6.5% annual return`, `year-11 value 418k`, and Chinese rental/value-growth descriptions can be typed normally.",
-      "Added a schema-wide input-type regression for every Smart Calculator question. Names, tables and natural-language parameters must use text input; only genuinely numeric fields may use the numeric keyboard and thousand-separator formatter.",
-      "Reworked the home screen into category navigation instead of rendering every calculator section in one long vertical page. The category selector now appears immediately after the home tip and only the selected category is shown.",
-      "Mobile calculator cards now use a compact two-column layout. Expense Coverage was moved earlier within Investing, next to retirement planning, so it is reachable quickly on a 390×844 screen instead of sitting near the bottom of the full home page.",
-      "Added real UI regressions for numeric-to-text question switching and Home → Investing → Expense Coverage navigation. The full Flutter regression suite now has 126 passing tests and the Web release build succeeds."
+      "Product Comparison now uses type-specific structured inputs instead of asking users to describe return parameters after already choosing a product type. Savings insurance gets annual growth, annual withdrawal, withdrawal start year and optional end year; deposits get an annual rate; funds/ETFs/stocks get total return plus optional cash dividends; rental property gets appreciation plus net rent; bonds/income products get asset growth plus annual distributions. Only Other / Custom keeps free text.",
+      "Fixed savings-insurance withdrawal modelling. Scheduled withdrawals now reduce policy value first, and only the remaining balance continues compounding. Withdrawn cash is counted as received cash in total value and IRR instead of being added on top of an untouched policy balance.",
+      "Result sections now separate annual income from annual withdrawals and show the withdrawal period. Poster summaries also state the annual withdrawal amount and start year.",
+      "Legacy natural-language inputs remain compatible, including phrases such as `6.5% annual growth, withdraw 50k per year starting in year 4 until year 10`.",
+      "Added structured-comparison and withdrawal-cash-flow regressions. The full Flutter suite now has 128 passing tests; the 390×844 mobile flow was exercised end-to-end through a savings-insurance-withdrawal vs rental-property comparison, and the Web release build succeeds."
     ]
   }
 }
