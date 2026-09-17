@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.17.0",
-  "build": 25,
+  "version": "1.18.1",
+  "build": 27,
   "mandatory": false,
-  "publishedAt": "2026-09-16T14:07:03Z",
+  "publishedAt": "2026-09-17T11:32:59Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.17.0/LifeEasy-v1.17.0.apk",
-    "sha256": "8afccdca738f1b50df3d57e02acd3403f178ec0627ca5ad854d6099a9f94d5ef",
-    "size": 45793705,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1.apk",
+    "sha256": "7da39ea5bd829870047492038c57b62dbac37f0149608a27c0aa7ba01ba62c6e",
+    "size": 45809413,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.17.0/LifeEasy-v1.17.0-arm64-v8a.apk",
-        "sha256": "b1255552239da2ad9b796faf2562d76ad3c6a2114a05f852fe76178c1970fdb4",
-        "size": 19149426
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1-arm64-v8a.apk",
+        "sha256": "d3ed55c2b3259d05b243eacee83f700f6b238f034b2714848595741bb64e0e41",
+        "size": 19154294
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.17.0/LifeEasy-v1.17.0-armeabi-v7a.apk",
-        "sha256": "b302712cc2a129351fb5d4d30542e187c35cca1be1b3d5020738d74672ee9f22",
-        "size": 18041208
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1-armeabi-v7a.apk",
+        "sha256": "3825f92ddfcf40f102e2fea8d50d958ac6031dd2e12470069a4546103a0a88ac",
+        "size": 18047444
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.17.0/LifeEasy-v1.17.0-x86_64.apk",
-        "sha256": "a21c7aa47b535a99a6802ea6e8a1e1ea2b98378ed2d077b4a9b9795c255f4619",
-        "size": 19416275
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1-x86_64.apk",
+        "sha256": "27157f2ffd72471ff750a85d35b9c7e9422e3ea1fc8f8fa83891d37b1f645ace",
+        "size": 19420883
       }
     }
   },
@@ -32,20 +32,18 @@
   },
   "notes": {
     "zh": [
-      "智能計算器新增「最低起投門檻 + 現有現金 + 每月新增資金 + 派息」完整模型。像「最低1.2萬才能購買，現金8萬，每月存4000，每年派息18%，6年後多少」可零追問直接計算真實買入節奏、累計派息、期末持倉、待投現金及期末月派息；派息率與資產／淨值增長分開處理，避免把 18% 派息錯當成本金 18% 複利。",
-      "投資結果預測升級為可變現金流模型，支援每年加供／減供、年化管理費／平台費及中途一次追加或提款。例如「現有20萬，每月投3000，第3年再加10萬，第6年拿走5萬」會按實際現金事件重新計算後續複利、累計投入、已提款、費用及淨收益。",
-      "新增三個常用智能場景：「每月提款可以用多久」「應急金要存多少、多久夠」「通脹後未來要多少才保持同等購買力」。提款模型可同時計入投資收益與生活費逐年增加；應急金會計算目標、差額及達標月份；通脹模型會顯示未來等值金額與購買力折損。",
-      "智能計算器新增「現金流／生活」示例分類，並加強多百分比自然語言消歧。同一句中的投資年化、管理費、派息率、通脹及提款增長會按語境分到正確欄位，不再互相污染。",
-      "儲蓄保險領取規劃與海報進一步重構：分段領取會顯示實際領取時間線與階段金額；反推模式會分開展示 100%／90%／80% 情景。一次性預繳現在只改變付款時點，未來年度保費不會被提前放入保單價值複利；預繳利息與折扣／回贈會作為保單外現金流獨立計算及展示。",
-      "完整 Flutter 回歸擴充至 141 項並全部通過；新增 390×844 手機零追問流程、隨機對抗輸入、派息頻率、費用、追加／提款、應急金及通脹專項回歸。Web Release 構建成功。"
+      "正式發布智能計算器「定期投入頻率」更新：投資結果預測現在可直接處理每日、每週、每兩週、每月、每季、每半年及每年投入，並按真實投入時點計算複利，不再把非月供條件忽略或誤換算成月供。",
+      "「本金9.6萬，每年存入7000，年化8%，11年後多少錢？」可零追問完整識別為本金 96,000、每次投入 7,000、每年 1 次、11 年及年化 8%；累計自行投入本金正確為 173,000。",
+      "同一套投入頻率口徑已同步用於投資結果預測、目標反推收益率、目標反推需要多久，以及帶最低起投門檻的派息產品；結果頁及條件核對區會明確顯示「每次投入金額 + 投入頻率」。",
+      "保留每日／週／雙週／月／季／半年／年投入、最低起投、所需收益率／年期及 390×844 手機流程的專項回歸；完整 Flutter 測試為 142 項並全部通過，Web Release 構建成功。",
+      "v1.18.0 的 GitHub Actions 在 Android universal APK、3 個 ABI APK 及 142 項測試全部成功後，於 Web dart2js 階段收到 GitHub hosted runner 的 shutdown signal（exit -15），因此沒有產生公開 Release 資產。v1.18.1 不改變上述功能邏輯，作為同一功能集的正式重發版本。"
     ],
     "en": [
-      "Added a complete minimum-purchase income-product model to Smart Calculator. Requests such as “minimum purchase 12k, 80k cash now, save 4k monthly, 18% annual income yield — how much after 6 years?” now resolve with no follow-up and model the actual purchase cadence, cumulative distributions, ending holdings, pending cash and ending monthly-income equivalent. Income yield is kept separate from NAV/asset growth so an 18% distribution rate is not misread as 18% capital appreciation.",
-      "Upgraded investment projection to support changing real-life cash flows: annual contribution step-ups/step-downs, annual management/platform fees, and one-off top-ups or withdrawals at specific years. Later compounding, contributed principal, withdrawals, fees and net gain are recalculated from the actual event timeline.",
-      "Added three everyday Smart scenarios: withdrawal longevity, emergency-fund planning, and future cost after inflation. Withdrawal longevity includes investment return and yearly spending growth; emergency planning calculates the reserve target, remaining gap and months to reach it; inflation planning shows the future equivalent amount and purchasing-power erosion.",
-      "Added a dedicated Cash flow / living-cost examples category and strengthened percentage disambiguation. Investment return, management fees, income yield, inflation and withdrawal growth can coexist in one sentence without contaminating each other.",
-      "Refined savings-insurance payout planning and posters. Tiered payouts now surface the actual timeline and staged amounts; reverse optimization separates 100%/90%/80% scenarios. One-time prepayment now changes payment timing only instead of prematurely compounding future premiums inside policy value, while prepayment interest and discounts/rebates are treated as separate off-policy cash flows.",
-      "Expanded the full Flutter regression suite to 141 passing tests, including 390×844 zero-follow-up mobile flows, randomized adversarial inputs, payout-frequency checks, fees, cash events, emergency funds and inflation. Web Release build succeeds."
+      "Formally releases the Smart Calculator recurring-contribution update. Investment Projection now supports daily, weekly, biweekly, monthly, quarterly, semiannual and annual contributions at their actual contribution times instead of dropping or converting non-monthly schedules into monthly funding.",
+      "Requests such as “start with 96k, add 7k each year, earn 8% annually — how much after 11 years?” now resolve with no follow-up as 96k starting capital, 7k per contribution, one contribution per year, 11 years and 8% return, with total contributed principal correctly equal to 173k.",
+      "The same contribution-frequency model is shared by Investment Projection, Required Return, Time to Goal and minimum-purchase income products. Review cards and result sections explicitly show contribution amount plus contribution frequency.",
+      "Keeps dedicated regressions for daily/weekly/biweekly/monthly/quarterly/semiannual/annual schedules, minimum-purchase products, required-return/time calculations and the 390×844 mobile flow. The full Flutter suite has 142 passing tests and the Web release build succeeds.",
+      "The v1.18.0 GitHub Actions run successfully completed all 142 tests plus the universal and three ABI Android APK builds, but the hosted runner received a shutdown signal during Web dart2js (exit -15), so no public release assets were produced. v1.18.1 keeps the same functional changes and republishes that feature set as the stable release."
     ]
   }
 }
