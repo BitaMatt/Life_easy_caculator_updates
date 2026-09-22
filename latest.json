@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.18.1",
-  "build": 27,
+  "version": "1.18.3",
+  "build": 29,
   "mandatory": false,
-  "publishedAt": "2026-09-17T11:32:59Z",
+  "publishedAt": "2026-09-22T12:01:13Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1.apk",
-    "sha256": "7da39ea5bd829870047492038c57b62dbac37f0149608a27c0aa7ba01ba62c6e",
-    "size": 45809413,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3.apk",
+    "sha256": "1bf5cee6915dd8dad1d8c6a9a8c25f13a9fc3283ba7ac220496a8ea49ef4ce92",
+    "size": 45810621,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1-arm64-v8a.apk",
-        "sha256": "d3ed55c2b3259d05b243eacee83f700f6b238f034b2714848595741bb64e0e41",
-        "size": 19154294
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3-arm64-v8a.apk",
+        "sha256": "b01b1ea12296c360e30e4ab648af728efb834f38f866491c94d4986d0777c38b",
+        "size": 19154606
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1-armeabi-v7a.apk",
-        "sha256": "3825f92ddfcf40f102e2fea8d50d958ac6031dd2e12470069a4546103a0a88ac",
-        "size": 18047444
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3-armeabi-v7a.apk",
+        "sha256": "ef46f285c39c55f52b6beb5c8d3226e9cf19598c87d8dc170e1a46887dc80276",
+        "size": 18048004
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.1/LifeEasy-v1.18.1-x86_64.apk",
-        "sha256": "27157f2ffd72471ff750a85d35b9c7e9422e3ea1fc8f8fa83891d37b1f645ace",
-        "size": 19420883
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3-x86_64.apk",
+        "sha256": "095aa31d478735275096358c613f8e6e26cd585c203b79dcb425e9f47ad5265f",
+        "size": 19421211
       }
     }
   },
@@ -32,18 +32,16 @@
   },
   "notes": {
     "zh": [
-      "正式發布智能計算器「定期投入頻率」更新：投資結果預測現在可直接處理每日、每週、每兩週、每月、每季、每半年及每年投入，並按真實投入時點計算複利，不再把非月供條件忽略或誤換算成月供。",
-      "「本金9.6萬，每年存入7000，年化8%，11年後多少錢？」可零追問完整識別為本金 96,000、每次投入 7,000、每年 1 次、11 年及年化 8%；累計自行投入本金正確為 173,000。",
-      "同一套投入頻率口徑已同步用於投資結果預測、目標反推收益率、目標反推需要多久，以及帶最低起投門檻的派息產品；結果頁及條件核對區會明確顯示「每次投入金額 + 投入頻率」。",
-      "保留每日／週／雙週／月／季／半年／年投入、最低起投、所需收益率／年期及 390×844 手機流程的專項回歸；完整 Flutter 測試為 142 項並全部通過，Web Release 構建成功。",
-      "v1.18.0 的 GitHub Actions 在 Android universal APK、3 個 ABI APK 及 142 項測試全部成功後，於 Web dart2js 階段收到 GitHub hosted runner 的 shutdown signal（exit -15），因此沒有產生公開 Release 資產。v1.18.1 不改變上述功能邏輯，作為同一功能集的正式重發版本。"
+      "修正智能計算器對口語「入／入金」的定期投入識別。像「本金1萬，年化8%，每年入7000，11年後多少？」現在會零追問識別為本金 10,000、每次投入 7,000、投入頻率每年、11 年及年化 8%，不再回退成「每次投入 0／每月」。",
+      "同步支援「每月入」「每季入」「每半年入」「每週入」「每兩週入」「每日入」以及「入金」等說法，並沿用同一套定期投入頻率計算模型。",
+      "對單字「入」增加安全邊界：只有後面直接接數字或貨幣符號時先視為投入，避免把粵語「入息」等收入語義誤判成定期供款。",
+      "390×844 手機回歸改用用戶實際輸入句「本金1萬，年化8%，每年入7000，11年後多少？」；結果頁累計自行投入本金正確為 87,000。完整 Flutter 測試維持 142 項並全部通過。"
     ],
     "en": [
-      "Formally releases the Smart Calculator recurring-contribution update. Investment Projection now supports daily, weekly, biweekly, monthly, quarterly, semiannual and annual contributions at their actual contribution times instead of dropping or converting non-monthly schedules into monthly funding.",
-      "Requests such as “start with 96k, add 7k each year, earn 8% annually — how much after 11 years?” now resolve with no follow-up as 96k starting capital, 7k per contribution, one contribution per year, 11 years and 8% return, with total contributed principal correctly equal to 173k.",
-      "The same contribution-frequency model is shared by Investment Projection, Required Return, Time to Goal and minimum-purchase income products. Review cards and result sections explicitly show contribution amount plus contribution frequency.",
-      "Keeps dedicated regressions for daily/weekly/biweekly/monthly/quarterly/semiannual/annual schedules, minimum-purchase products, required-return/time calculations and the 390×844 mobile flow. The full Flutter suite has 142 passing tests and the Web release build succeeds.",
-      "The v1.18.0 GitHub Actions run successfully completed all 142 tests plus the universal and three ABI Android APK builds, but the hosted runner received a shutdown signal during Web dart2js (exit -15), so no public release assets were produced. v1.18.1 keeps the same functional changes and republishes that feature set as the stable release."
+      "Fixed recurring-contribution parsing for colloquial Chinese “入 / 入金” (put in / fund). “本金1萬，年化8%，每年入7000，11年後多少？” now resolves with no follow-up as 10,000 starting capital, 7,000 per annual contribution, 11 years and 8% return instead of falling back to zero monthly contributions.",
+      "Added equivalent handling for monthly, quarterly, semiannual, weekly, biweekly and daily “入” phrasing, plus “入金”, all using the same recurring-contribution schedule model.",
+      "Added a safety boundary for the single-character verb “入”: it is treated as a contribution only when followed directly by a number or currency symbol, preventing Cantonese income wording such as “入息” from being misclassified.",
+      "Updated the 390×844 mobile regression to use the exact real-world phrase reported by the user; the resulting contributed principal is 87,000. The complete Flutter suite remains at 142 passing tests."
     ]
   }
 }
