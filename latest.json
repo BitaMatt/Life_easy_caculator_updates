@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.18.3",
-  "build": 29,
+  "version": "1.19.0",
+  "build": 30,
   "mandatory": false,
-  "publishedAt": "2026-09-22T12:01:13Z",
+  "publishedAt": "2026-09-26T05:36:18Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3.apk",
-    "sha256": "1bf5cee6915dd8dad1d8c6a9a8c25f13a9fc3283ba7ac220496a8ea49ef4ce92",
-    "size": 45810621,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.19.0/LifeEasy-v1.19.0.apk",
+    "sha256": "b9f75d3239e516a70c4ecf52cd288b93bb1e2653c19f1e43c17c68b9ace970ad",
+    "size": 45994665,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3-arm64-v8a.apk",
-        "sha256": "b01b1ea12296c360e30e4ab648af728efb834f38f866491c94d4986d0777c38b",
-        "size": 19154606
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.19.0/LifeEasy-v1.19.0-arm64-v8a.apk",
+        "sha256": "f493cf159f37f5eaec1545672d6f18786d13cfaec48c4113e0268ec93bd8703d",
+        "size": 19213950
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3-armeabi-v7a.apk",
-        "sha256": "ef46f285c39c55f52b6beb5c8d3226e9cf19598c87d8dc170e1a46887dc80276",
-        "size": 18048004
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.19.0/LifeEasy-v1.19.0-armeabi-v7a.apk",
+        "sha256": "3f0eac0616174267ba35d467f435de2fd79dd493f614af0d76d81a27d5d3946a",
+        "size": 18114772
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.18.3/LifeEasy-v1.18.3-x86_64.apk",
-        "sha256": "095aa31d478735275096358c613f8e6e26cd585c203b79dcb425e9f47ad5265f",
-        "size": 19421211
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.19.0/LifeEasy-v1.19.0-x86_64.apk",
+        "sha256": "de0acd6f2dcb6449619941b8f5cd4ba2d15673152e1359a54119306508f3cf42",
+        "size": 19480539
       }
     }
   },
@@ -32,16 +32,24 @@
   },
   "notes": {
     "zh": [
-      "修正智能計算器對口語「入／入金」的定期投入識別。像「本金1萬，年化8%，每年入7000，11年後多少？」現在會零追問識別為本金 10,000、每次投入 7,000、投入頻率每年、11 年及年化 8%，不再回退成「每次投入 0／每月」。",
-      "同步支援「每月入」「每季入」「每半年入」「每週入」「每兩週入」「每日入」以及「入金」等說法，並沿用同一套定期投入頻率計算模型。",
-      "對單字「入」增加安全邊界：只有後面直接接數字或貨幣符號時先視為投入，避免把粵語「入息」等收入語義誤判成定期供款。",
-      "390×844 手機回歸改用用戶實際輸入句「本金1萬，年化8%，每年入7000，11年後多少？」；結果頁累計自行投入本金正確為 87,000。完整 Flutter 測試維持 142 項並全部通過。"
+      "新增未來領取規劃，正確處理「10年後每年拿4萬，拿4年」及「到永遠」；未來每年收入不再被當成目前每月工資。保留缺失及矛盾條件追問，展示準備期、首次領取年、年供/月供/一次性投入路線及每日預算。永續只是固定回報高於領取增長的數學假設，並非產品保證。",
+      "新增風險預算投資入口，保留每年1萬等投入單位；年期不明時追問。配置只是在已列明的5%權重網格和壓力假設下比較，不宣稱真實市場收益最大化或保證10%最大回撤。",
+      "新增衣食住行目標儲蓄：教育、旅行、搬屋/首期、衣物、飲食、買車及醫療預備金；半年正確按6個月計算，可納入目標通脹。",
+      "儲蓄保險新增用途及固定連續領取年數；教育海報顯示足額覆蓋的期數、年供與每日預算，不再因為使用保險就稱為傳承。未指定產品條款時不自動套用4%保費回贈。計劃領取、實際領取及缺口分開處理。",
+      "分段領取改為可新增/刪除的表單：起止年份、開放年期、提取百分比快選及實際金額預覽；重疊、倒序及非法比例會阻止錯誤方案分享。舊文字輸入移到進階區。",
+      "分析書新增完整逐年供款、實領、剩餘价值、IRR與缺口，以及相同投入/提款要求下的2%定期比較。可改比較回報，提供剩餘資產和累計收益兩張獨立曲線、比較方案逐年缺口；回贈只屬保單外现金，不重複加入保單余额。",
+      "修復長期月度現金流在IRR負利率邊界計算時的無限大相減問題，改用穩定Horner求值；新增獨立年金公式、用戶原句、否定/矛盾條件、長者操作、大字手機及實際海報/分析書渲染回歸。",
+      "將每次必做的角色對抗審查、評分、修正、視覺檢查及正式發布驗證写入AGENTS.md與docs/PERSONA_REVIEW_SOP.md。完整自動測試160項通過，實際渲染與審查記錄保留於項目。"
     ],
     "en": [
-      "Fixed recurring-contribution parsing for colloquial Chinese “入 / 入金” (put in / fund). “本金1萬，年化8%，每年入7000，11年後多少？” now resolves with no follow-up as 10,000 starting capital, 7,000 per annual contribution, 11 years and 8% return instead of falling back to zero monthly contributions.",
-      "Added equivalent handling for monthly, quarterly, semiannual, weekly, biweekly and daily “入” phrasing, plus “入金”, all using the same recurring-contribution schedule model.",
-      "Added a safety boundary for the single-character verb “入”: it is treated as a contribution only when followed directly by a number or currency symbol, preventing Cantonese income wording such as “入息” from being misclassified.",
-      "Updated the 390×844 mobile regression to use the exact real-world phrase reported by the user; the resulting contributed principal is 87,000. The complete Flutter suite remains at 142 passing tests."
+      "Added future-income planning for finite payouts and perpetual-income assumptions. Annual future targets are no longer misclassified as current monthly salary. Missing or conflicting inputs remain questions; the result shows timing, lump-sum/annual/monthly funding and a daily budget equivalent.",
+      "Added risk-budget funding with annual contribution preservation and an explicitly bounded illustrative allocation grid. It is not historical optimization or a maximum-drawdown guarantee.",
+      "Added everyday goal savings for education, travel, housing, clothing, food, transport and medical reserves, including month-accurate horizons and optional cost inflation.",
+      "Insurance planning now supports explicit purpose and consecutive payout years. Education posters show fully funded payout counts rather than legacy labels. Generic projections no longer invent a 4% rebate. Requested payouts, actual payouts and shortfalls are separate.",
+      "Replaced mandatory text-based withdrawal schedules with editable year/rate stages, add/remove controls, percentage presets, amount previews and overlap/range validation. Legacy text entry remains under Advanced.",
+      "Expanded analysis books with complete annual funding, payouts, residual value, IRR and gaps; editable hypothetical bank/cash/bond/growth comparisons use identical funding and payout requests. Separate residual-asset and cumulative-gain charts avoid disguising unfunded payouts or double-counting rebates.",
+      "Stabilized long-period IRR evaluation with Horner forms and added independent-formula, real-input, contradictory-input, elder form, large-text phone and rendered-report regressions.",
+      "Recorded the required persona review, scoring, improvement, visual QA and release verification SOP in the repository. All 160 automated tests pass; review and actual render evidence are recorded in the project."
     ]
   }
 }
