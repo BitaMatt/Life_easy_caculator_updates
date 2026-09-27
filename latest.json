@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.20.0",
-  "build": 31,
+  "version": "1.21.0",
+  "build": 32,
   "mandatory": false,
-  "publishedAt": "2026-09-26T11:14:42Z",
+  "publishedAt": "2026-09-27T09:12:45Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.20.0/LifeEasy-v1.20.0.apk",
-    "sha256": "d20a3c90dc713e98ea3205cbedd74aee6da624deb0f759391dd204e97adc3967",
-    "size": 46026401,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0.apk",
+    "sha256": "03a276dc88ab3a31723f7761279a6acb06415cf93781bd311228d580122dca98",
+    "size": 46025033,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.20.0/LifeEasy-v1.20.0-arm64-v8a.apk",
-        "sha256": "4d22066d65c48a1acb1076961593cf8f5a411e89c4931ca7a0d9efd40317beda",
-        "size": 19221494
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0-arm64-v8a.apk",
+        "sha256": "64a2bc765378b6fe77a8b9d86b33a765abe4f5f07c115b652d33e5a834484e8f",
+        "size": 19223206
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.20.0/LifeEasy-v1.20.0-armeabi-v7a.apk",
-        "sha256": "c730bce51db2717b9e97ac5f19741746f4fdeb331345fcd4f0caa05aa885d07e",
-        "size": 18127300
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0-armeabi-v7a.apk",
+        "sha256": "eb278f14d22955ef3ef1e8bdec07aca6b3bbcb12e792b0e47b041338882d14c0",
+        "size": 18125292
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.20.0/LifeEasy-v1.20.0-x86_64.apk",
-        "sha256": "291ed4d1c7a5d28f959c6939b3e7383d1dbc6911a0c4c626fd07efc9abb5c888",
-        "size": 19492203
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0-x86_64.apk",
+        "sha256": "1152e825a825e4892cfe189b565e0a58ff340f151c2d3ba5e77bd32648382a3f",
+        "size": 19490475
       }
     }
   },
@@ -32,20 +32,20 @@
   },
   "notes": {
     "zh": [
-      "未來領取規劃支援每月或每年領取，與供款頻率分開設定。「10年後每月拿4000，拿20年，每年存錢」可直接識別；先說目前月薪再說未來領取目標時，不再混用兩個金額。新增繁中、簡中及英文原句回歸。",
-      "月領使用實際月度現金流：儲蓄10年後第121個月末開始，20年共240次；按有效年回報換算月回報、月末提款、不再投資已領款項，並按每個領取年度調升金額。年度匯總、收益曲線和IRR共用同一份月度記錄。",
-      "修正月供方案每日預算誤用另一條年供路線數字的問題。月供現在以所選月供乘12再除365；一次性投入另列扣除現有本金後仍需補足的金額。",
-      "月领分析書保留完整逐年資料，補充首個領取年度逐月明細；比較方案若出現不足款，展示首次缺口年度的月度明細。只會支付可用餘額，不把未付金額當成已領收入。",
-      "海報明確保留本金、準備期、假設年回報、領取額、領取頻率、期數和供款預算。修正英文分析書長標題/說明造成的表格底部溢出，保持完整12個月、自然行高和原字號。",
-      "月領方案不再提供會靜默轉為年領的保單演示入口；舊年度模型、利益表分析和既有語句保持相容。所有回報均為演示假設，不是產品報價或永久領取保證。"
+      "修正「供款3年，6年後每年拿4萬」將等待期當成供款年期的計算問題。供款年期、等待期與領取年期獨立；年供/月供均在指定供款期結束後停止，餘額繼續按假設回報增長。保單演示入口亦保留真實供款年數。",
+      "已識別的未來領取條件可點擊直接修改；供款年期超過等待期、非整數、零年或衝突條件會要求更正。未明示供款年期時，會清楚列出沿用等待期供款的假設，避免把推測當成已知。",
+      "補強英文句序：即使供款條件放在等待期之後，也不會把「供3年」誤填為「領3年」，或覆蓋明示的領取年期；沒有說要領幾年時仍需補充。",
+      "分享流程分離圖片與PDF：「海報＋分析書」改為全部PNG，分析書PDF單獨匯出，不再產生PNG/PDF混合分享。長報告提供完整頁碼批次選擇，每批最多9張以減少記憶體使用，不代表任何接收應用的官方上限。",
+      "核心海報按內容自然決定高度，不再強制1080×1920；預覽與匯出使用同一內容，短結果不留大空白，長標籤、摘要與關鍵輸入不靠裁切隱藏。PDF分析書維持固定頁面。",
+      "分享取消不再顯示成功提示；其他狀態只提示已交给系統分享／下載，不把系統接收當成微信或收件人已收到。新增原句、獨立現金流公式、分享格式、完整分批、大字手機、自然高度與實際圖像/PDF回歸。"
     ],
     "en": [
-      "Added monthly and annual payout frequencies independently of contribution frequency. The original monthly-income/annual-funding phrase is covered in Traditional Chinese, Simplified Chinese and English; current salary is kept separate from future requested income.",
-      "Monthly plans now use actual month-end cash flows: after ten saving years the first payout is at month 121, with 240 payouts over twenty years. Effective monthly returns, annual payout step-ups, non-reinvested withdrawals, annual summaries, charts and IRR share one journal.",
-      "Fixed daily budget equivalents using the wrong annual-funding alternative for monthly-funded plans. Daily budgets now follow the selected funding schedule, and additional lump sums deduct existing capital explicitly.",
-      "Reports retain complete annual summaries and add a twelve-month view of the first payout year. Underfunded comparisons show the first shortfall year's monthly detail instead of treating unfunded requests as cash received.",
-      "Posters preserve principal, saving horizon, assumed return, payout amount/frequency/count and funding budgets. Fixed English report table overflow without dropping monthly rows or reducing font sizes.",
-      "Monthly plans are not silently converted to the annual-only insurance simulator. Existing annual APIs, benefit-table analysis and prior regressions remain supported. All returns remain illustrative assumptions, not product quotations or guarantees."
+      "Separated funding years, payout delay and payout duration. A three-year contribution term with a six-year delay now stops contributions after year three for both annual and monthly funding, while invested assets continue growing. The insurance simulator handoff preserves the funding term.",
+      "Recognized income-plan conditions can be edited directly. Invalid or conflicting funding terms require correction, and unspecified funding terms are explicitly identified as assumptions rather than recognized facts.",
+      "English contribution clauses after the future date no longer fill an unspecified payout duration or overwrite an explicit one. Missing payout years still require confirmation.",
+      "Split image sharing from PDF export. Poster-plus-report sharing now contains PNG images only; PDF is exported separately. Long reports expose every page through batches of up to nine images to manage memory, not as a claimed receiving-app limit.",
+      "Core posters now have content-driven height instead of a fixed 1080-by-1920 canvas. Preview and export use the same complete content; key labels, summaries and inputs wrap naturally. Analysis PDFs remain paginated.",
+      "Dismissed shares no longer show a success message; other results report system handoff rather than asserting delivery to WeChat or a recipient. Added original-phrase, independent cash-flow, format-boundary, complete-batch, large-text, adaptive-layout and actual image/PDF regressions."
     ]
   }
 }
