@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.21.0",
-  "build": 32,
+  "version": "1.22.0",
+  "build": 33,
   "mandatory": false,
-  "publishedAt": "2026-09-27T09:12:45Z",
+  "publishedAt": "2026-10-25T05:14:22Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0.apk",
-    "sha256": "03a276dc88ab3a31723f7761279a6acb06415cf93781bd311228d580122dca98",
-    "size": 46025033,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0.apk",
+    "sha256": "19a92769255f08a739a1f5e4431c035b6ff37bbac5c4a290ff1c9af41a7c2212",
+    "size": 46207505,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0-arm64-v8a.apk",
-        "sha256": "64a2bc765378b6fe77a8b9d86b33a765abe4f5f07c115b652d33e5a834484e8f",
-        "size": 19223206
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0-arm64-v8a.apk",
+        "sha256": "c792c8d3db05b60f6cea9ef72ea3528283991f03d3001bb835519d65fb994272",
+        "size": 19279150
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0-armeabi-v7a.apk",
-        "sha256": "eb278f14d22955ef3ef1e8bdec07aca6b3bbcb12e792b0e47b041338882d14c0",
-        "size": 18125292
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0-armeabi-v7a.apk",
+        "sha256": "54190e68387c766a9ed096916ee4a60b73c42007c255befcd2e3700d5a8e2709",
+        "size": 18192884
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.21.0/LifeEasy-v1.21.0-x86_64.apk",
-        "sha256": "1152e825a825e4892cfe189b565e0a58ff340f151c2d3ba5e77bd32648382a3f",
-        "size": 19490475
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0-x86_64.apk",
+        "sha256": "bedb14db68b1b947312ee2a8d8aef710b017d19b5e0c15ad657e992f8dd87e52",
+        "size": 19550163
       }
     }
   },
@@ -32,20 +32,18 @@
   },
   "notes": {
     "zh": [
-      "修正「供款3年，6年後每年拿4萬」將等待期當成供款年期的計算問題。供款年期、等待期與領取年期獨立；年供/月供均在指定供款期結束後停止，餘額繼續按假設回報增長。保單演示入口亦保留真實供款年數。",
-      "已識別的未來領取條件可點擊直接修改；供款年期超過等待期、非整數、零年或衝突條件會要求更正。未明示供款年期時，會清楚列出沿用等待期供款的假設，避免把推測當成已知。",
-      "補強英文句序：即使供款條件放在等待期之後，也不會把「供3年」誤填為「領3年」，或覆蓋明示的領取年期；沒有說要領幾年時仍需補充。",
-      "分享流程分離圖片與PDF：「海報＋分析書」改為全部PNG，分析書PDF單獨匯出，不再產生PNG/PDF混合分享。長報告提供完整頁碼批次選擇，每批最多9張以減少記憶體使用，不代表任何接收應用的官方上限。",
-      "核心海報按內容自然決定高度，不再強制1080×1920；預覽與匯出使用同一內容，短結果不留大空白，長標籤、摘要與關鍵輸入不靠裁切隱藏。PDF分析書維持固定頁面。",
-      "分享取消不再顯示成功提示；其他狀態只提示已交给系統分享／下載，不把系統接收當成微信或收件人已收到。新增原句、獨立現金流公式、分享格式、完整分批、大字手機、自然高度與實際圖像/PDF回歸。"
+      "智能計算器主入口改為《艾爾登法環》留言式的固定句式組裝器：先選收益、儲蓄生活目標、資產與退休、被動收入、產品比較類別，再選問題，逐個點擊詞塊調整條件。供款頻率、類型及其他選擇項使用固定下拉列表，金額、年期、利率使用數字輸入；不再公開自由文字意圖輸入框。",
+      "不重寫既有計算公式。固定條件直接映射到原本計算情境及問卷；特殊保單利益表使用原有專用後續編輯器。原有口語範例保留為內部回歸測試，不再依賴使用者猜中關鍵字。",
+      "新增選用 DeepSeek API 解讀渠道，支援現行 deepseek-flash、deepseek-v4-pro 模型。用戶自行輸入 API Key，僅保存在本次執行的記憶體；模型設定可保留但金鑰不能持久化。默認不聯網、不送資料，只有在結果頁明確點擊解讀時傳送已選條件和本地結果摘要。AI 不得取代或改寫本地數字。",
+      "攢錢目標、儲蓄目標與定投同步支援日／週／雙週／月／季／半年／年頻率，期限與供款頻率可獨立選；可指定不供款期數並據此重新計算實際本金、複利與達標期數。同步改進相關生活規劃共用計算頻率。",
+      "增補 2018 至 2026 縮寫年份反推年化、每年「買」7000、固定句式與 AI 金鑰安全回歸；修正大字短屏時附加條件區與滾動位置的儲存衝突。保留簡體、繁體及英文。"
     ],
     "en": [
-      "Separated funding years, payout delay and payout duration. A three-year contribution term with a six-year delay now stops contributions after year three for both annual and monthly funding, while invested assets continue growing. The insurance simulator handoff preserves the funding term.",
-      "Recognized income-plan conditions can be edited directly. Invalid or conflicting funding terms require correction, and unspecified funding terms are explicitly identified as assumptions rather than recognized facts.",
-      "English contribution clauses after the future date no longer fill an unspecified payout duration or overwrite an explicit one. Missing payout years still require confirmation.",
-      "Split image sharing from PDF export. Poster-plus-report sharing now contains PNG images only; PDF is exported separately. Long reports expose every page through batches of up to nine images to manage memory, not as a claimed receiving-app limit.",
-      "Core posters now have content-driven height instead of a fixed 1080-by-1920 canvas. Preview and export use the same complete content; key labels, summaries and inputs wrap naturally. Analysis PDFs remain paginated.",
-      "Dismissed shares no longer show a success message; other results report system handoff rather than asserting delivery to WeChat or a recipient. Added original-phrase, independent cash-flow, format-boundary, complete-batch, large-text, adaptive-layout and actual image/PDF regressions."
+      "Replaced the Smart Calculator's freeform idea entry with an Elden Ring-inspired structured phrase composer: select a category and scenario, then tap dropdown slots for non-numeric conditions and enter amounts, dates/durations and rates numerically. Monetary calculations still run in the original local engine.",
+      "Existing specialist policy/table editors remain available after scenario selection, while legacy natural-language sentences remain regression fixtures rather than required user input.",
+      "Added an optional DeepSeek explanation channel with current deepseek-flash and deepseek-v4-pro models. Users bring their own API key, retained in session memory only. No network request occurs for calculations; selected inputs and results are sent only after an explicit Explain action. AI output cannot change the locally computed results.",
+      "Extended savings goals, periodic deposit goals and DCA with daily, weekly, biweekly, monthly, quarterly, semiannual and annual schedules, separate duration units and skipped contribution periods; updated shared planning frequencies.",
+      "Added regression coverage for short calendar-year phrases, colloquial annual purchases, dropdown/numeric-only user interactions and DeepSeek privacy; fixed an expansion/scroll PageStorage conflict on small, large-text screens."
     ]
   }
 }
