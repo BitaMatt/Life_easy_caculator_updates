@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.22.0",
-  "build": 33,
+  "version": "1.22.1",
+  "build": 34,
   "mandatory": false,
-  "publishedAt": "2026-10-25T05:14:22Z",
+  "publishedAt": "2026-10-27T12:03:00Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0.apk",
-    "sha256": "19a92769255f08a739a1f5e4431c035b6ff37bbac5c4a290ff1c9af41a7c2212",
-    "size": 46207505,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1.apk",
+    "sha256": "9f4f6ff50f0ab3d3753975da66d8d16b32a50c27e37b8dd1bda7f170e52293ba",
+    "size": 46209373,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0-arm64-v8a.apk",
-        "sha256": "c792c8d3db05b60f6cea9ef72ea3528283991f03d3001bb835519d65fb994272",
-        "size": 19279150
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1-arm64-v8a.apk",
+        "sha256": "524192cb66a94627a57271e776f698c04709294bbf7c9f81494fb7350e13945e",
+        "size": 19282006
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0-armeabi-v7a.apk",
-        "sha256": "54190e68387c766a9ed096916ee4a60b73c42007c255befcd2e3700d5a8e2709",
-        "size": 18192884
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1-armeabi-v7a.apk",
+        "sha256": "86a02c114c4f3097d60052e29d1f96f3287d3643fdf4d409553efa6ebd19cc7b",
+        "size": 18191968
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.0/LifeEasy-v1.22.0-x86_64.apk",
-        "sha256": "bedb14db68b1b947312ee2a8d8aef710b017d19b5e0c15ad657e992f8dd87e52",
-        "size": 19550163
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1-x86_64.apk",
+        "sha256": "06b31c8b3baace2e791ce8d048081760dd4b55a1a9d593540da94942493a3428",
+        "size": 19550091
       }
     }
   },
@@ -32,18 +32,18 @@
   },
   "notes": {
     "zh": [
-      "智能計算器主入口改為《艾爾登法環》留言式的固定句式組裝器：先選收益、儲蓄生活目標、資產與退休、被動收入、產品比較類別，再選問題，逐個點擊詞塊調整條件。供款頻率、類型及其他選擇項使用固定下拉列表，金額、年期、利率使用數字輸入；不再公開自由文字意圖輸入框。",
-      "不重寫既有計算公式。固定條件直接映射到原本計算情境及問卷；特殊保單利益表使用原有專用後續編輯器。原有口語範例保留為內部回歸測試，不再依賴使用者猜中關鍵字。",
-      "新增選用 DeepSeek API 解讀渠道，支援現行 deepseek-flash、deepseek-v4-pro 模型。用戶自行輸入 API Key，僅保存在本次執行的記憶體；模型設定可保留但金鑰不能持久化。默認不聯網、不送資料，只有在結果頁明確點擊解讀時傳送已選條件和本地結果摘要。AI 不得取代或改寫本地數字。",
-      "攢錢目標、儲蓄目標與定投同步支援日／週／雙週／月／季／半年／年頻率，期限與供款頻率可獨立選；可指定不供款期數並據此重新計算實際本金、複利與達標期數。同步改進相關生活規劃共用計算頻率。",
-      "增補 2018 至 2026 縮寫年份反推年化、每年「買」7000、固定句式與 AI 金鑰安全回歸；修正大字短屏時附加條件區與滾動位置的儲存衝突。保留簡體、繁體及英文。"
+      "按產品驗收 SOP 對全套生活金融工具及智能計算器進行角色對抗、手機介面、獨立公式、海報／分析書和可選 AI 渠道檢查；保留所有原始案例並新增不可接受輸入、切換類別、狹窄螢幕及鍵盤回歸。",
+      "修正拼句式智能計算的邊界：不得以 0／負數準備期或年期、超出有效範圍的年齡或 100% 以上風險比例產生結果；同時檢查供款年數與等待期、退休年齡與現齡、預期壽命與退休年齡的矛盾。允許有意義的負回報與明示的永久領取假設。",
+      "原有逐題問卷同步套用數值邊界驗證，避免改用另一入口就繞過檢查；出錯時保留用戶數值並顯示錯誤。",
+      "修復真實 Chrome Web 驗收工具：新版 Flutter 的詞塊以無障礙標籤暴露，數字鍵盤需選中原有例子值後輸入；測試覆蓋本金調整、計算、獨立複利核對、海報預覽及圖片／PDF 分享選單。",
+      "保留 DeepSeek 自帶金鑰的僅會話保存、離線本地計算及所有舊海報；同步改正 README 過時的自由文字輸入及離線描述。詳細記錄見 docs/reviews/2026-10-27-full-product-acceptance.md。"
     ],
     "en": [
-      "Replaced the Smart Calculator's freeform idea entry with an Elden Ring-inspired structured phrase composer: select a category and scenario, then tap dropdown slots for non-numeric conditions and enter amounts, dates/durations and rates numerically. Monetary calculations still run in the original local engine.",
-      "Existing specialist policy/table editors remain available after scenario selection, while legacy natural-language sentences remain regression fixtures rather than required user input.",
-      "Added an optional DeepSeek explanation channel with current deepseek-flash and deepseek-v4-pro models. Users bring their own API key, retained in session memory only. No network request occurs for calculations; selected inputs and results are sent only after an explicit Explain action. AI output cannot change the locally computed results.",
-      "Extended savings goals, periodic deposit goals and DCA with daily, weekly, biweekly, monthly, quarterly, semiannual and annual schedules, separate duration units and skipped contribution periods; updated shared planning frequencies.",
-      "Added regression coverage for short calendar-year phrases, colloquial annual purchases, dropdown/numeric-only user interactions and DeepSeek privacy; fixed an expansion/scroll PageStorage conflict on small, large-text screens."
+      "Audited the calculator suite with adversarial personas, mobile UI, independent formulas, actual rendering and optional AI-channel mock tests, retaining all existing regression cases.",
+      "Blocked impossible zero/negative horizons, invalid ages, percentages beyond 100%, and contradictory funding/wait and retirement/lifespan assumptions in the fixed-slot composer. Legitimate negative historical returns and explicitly perpetual payouts remain valid.",
+      "Applied the same numeric validation to advanced question-by-question flows to prevent bypassing checks through an alternate entry path.",
+      "Repaired real Chrome UI QA for Flutter ActionChip accessible labels and numeric fields with an existing example value. Browser QA now edits principal, checks the independent annuity calculation, previews posters and inspects image/PDF share formats.",
+      "Corrected outdated documentation about the replaced freeform input and optional DeepSeek connectivity. API keys remain session-only; local formulas are unchanged."
     ]
   }
 }
