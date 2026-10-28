@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.22.1",
-  "build": 34,
+  "version": "1.22.2",
+  "build": 35,
   "mandatory": false,
-  "publishedAt": "2026-10-27T12:03:00Z",
+  "publishedAt": "2026-10-28T12:00:31Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1.apk",
-    "sha256": "9f4f6ff50f0ab3d3753975da66d8d16b32a50c27e37b8dd1bda7f170e52293ba",
-    "size": 46209373,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2.apk",
+    "sha256": "4c4d13281a0d2c7adb4c2953cb4e6fc4eae6cd2977d4d44e5a060343cace3c2d",
+    "size": 46212357,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1-arm64-v8a.apk",
-        "sha256": "524192cb66a94627a57271e776f698c04709294bbf7c9f81494fb7350e13945e",
-        "size": 19282006
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2-arm64-v8a.apk",
+        "sha256": "1e39fbcd41d8ec51e220dacc163d242d68e63aebec38cd683f1abf91e4f47bdc",
+        "size": 19282798
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1-armeabi-v7a.apk",
-        "sha256": "86a02c114c4f3097d60052e29d1f96f3287d3643fdf4d409553efa6ebd19cc7b",
-        "size": 18191968
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2-armeabi-v7a.apk",
+        "sha256": "7e9f649b85d80a0e43fd50f39a5afa25cdc4fb6d8309a5cddbe9c90723d50fcd",
+        "size": 18193560
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.1/LifeEasy-v1.22.1-x86_64.apk",
-        "sha256": "06b31c8b3baace2e791ce8d048081760dd4b55a1a9d593540da94942493a3428",
-        "size": 19550091
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2-x86_64.apk",
+        "sha256": "e09d9e122905c1ab07c68871890cb771082766bb277a7bf12d7be3aefb705314",
+        "size": 19550691
       }
     }
   },
@@ -32,18 +32,16 @@
   },
   "notes": {
     "zh": [
-      "按產品驗收 SOP 對全套生活金融工具及智能計算器進行角色對抗、手機介面、獨立公式、海報／分析書和可選 AI 渠道檢查；保留所有原始案例並新增不可接受輸入、切換類別、狹窄螢幕及鍵盤回歸。",
-      "修正拼句式智能計算的邊界：不得以 0／負數準備期或年期、超出有效範圍的年齡或 100% 以上風險比例產生結果；同時檢查供款年數與等待期、退休年齡與現齡、預期壽命與退休年齡的矛盾。允許有意義的負回報與明示的永久領取假設。",
-      "原有逐題問卷同步套用數值邊界驗證，避免改用另一入口就繞過檢查；出錯時保留用戶數值並顯示錯誤。",
-      "修復真實 Chrome Web 驗收工具：新版 Flutter 的詞塊以無障礙標籤暴露，數字鍵盤需選中原有例子值後輸入；測試覆蓋本金調整、計算、獨立複利核對、海報預覽及圖片／PDF 分享選單。",
-      "保留 DeepSeek 自帶金鑰的僅會話保存、離線本地計算及所有舊海報；同步改正 README 過時的自由文字輸入及離線描述。詳細記錄見 docs/reviews/2026-10-27-full-product-acceptance.md。"
+      "改善智能計算分析書的分頁密度、長者閱讀體驗：以最少但安全的頁數平均分配完整年度資料，不再有只剩一兩行的巨大留白尾頁；跨頁保留表頭與所有現金流資料。",
+      "中文短欄名及一般利益表最多每頁16行；英文或較長欄位採每頁最多12行的較保守排版，避免為減頁數而裁切文字。頁數會因資料及語言而不同。",
+      "條件明細均衡分頁，簡短的風險提醒可合併到條件尾頁，但所有警示、回報假設和費用說明仍完整顯示。教育保險分析書範例由11頁改善為8頁，年度、IRR及銀行比較仍與原先數據一致。",
+      "新增長短欄名、14年及33年現金流、無重複／無漏行、頁首重複表頭、英文溢出、短屏／大字與PDF實際渲染回歸測試。原有計算公式、收益假設、海報與分享格式均不變。"
     ],
     "en": [
-      "Audited the calculator suite with adversarial personas, mobile UI, independent formulas, actual rendering and optional AI-channel mock tests, retaining all existing regression cases.",
-      "Blocked impossible zero/negative horizons, invalid ages, percentages beyond 100%, and contradictory funding/wait and retirement/lifespan assumptions in the fixed-slot composer. Legitimate negative historical returns and explicitly perpetual payouts remain valid.",
-      "Applied the same numeric validation to advanced question-by-question flows to prevent bypassing checks through an alternate entry path.",
-      "Repaired real Chrome UI QA for Flutter ActionChip accessible labels and numeric fields with an existing example value. Browser QA now edits principal, checks the independent annuity calculation, previews posters and inspects image/PDF share formats.",
-      "Corrected outdated documentation about the replaced freeform input and optional DeepSeek connectivity. API keys remain session-only; local formulas are unchanged."
+      "Improved analysis-book pagination, balanced complete cash-flow schedules between pages, and eliminated almost-empty final pages without losing years, figures or repeating table headers.",
+      "Allow up to 16 rows for compact tables, using a safer 12-row limit for long English labels and descriptions where wrapping needs extra vertical space. Pages may differ by locale and content; no text is silently clipped to reduce page count.",
+      "Balanced assumption cards across pages and placed short disclosures after short final assumptions where layout permits. The illustrated education report now uses eight pages instead of eleven, preserving its 14-year cash flows, IRR, bank benchmarks and risk warnings.",
+      "Added regression coverage for 14/33-year lossless pagination, repeated headers, wrapped English columns, financial report rendering, large-text interfaces and explicit disclosures. Financial formulas and share formats are unchanged."
     ]
   }
 }
