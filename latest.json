@@ -1,29 +1,29 @@
 {
   "schema": 2,
   "channel": "stable",
-  "version": "1.22.2",
-  "build": 35,
+  "version": "1.22.3",
+  "build": 36,
   "mandatory": false,
-  "publishedAt": "2026-10-28T12:00:31Z",
+  "publishedAt": "2026-10-28T13:20:23Z",
   "android": {
-    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2.apk",
-    "sha256": "4c4d13281a0d2c7adb4c2953cb4e6fc4eae6cd2977d4d44e5a060343cace3c2d",
-    "size": 46212357,
+    "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.3/LifeEasy-v1.22.3.apk",
+    "sha256": "14b23814130f255e8ec5da76c2a18154027883dab55d742eed50039059d8fd80",
+    "size": 46930501,
     "abis": {
       "arm64-v8a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2-arm64-v8a.apk",
-        "sha256": "1e39fbcd41d8ec51e220dacc163d242d68e63aebec38cd683f1abf91e4f47bdc",
-        "size": 19282798
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.3/LifeEasy-v1.22.3-arm64-v8a.apk",
+        "sha256": "2a49745e23067de2d34b391a5882beb03e3b7486503c09934f6f2ed8dcfad034",
+        "size": 19512266
       },
       "armeabi-v7a": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2-armeabi-v7a.apk",
-        "sha256": "7e9f649b85d80a0e43fd50f39a5afa25cdc4fb6d8309a5cddbe9c90723d50fcd",
-        "size": 18193560
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.3/LifeEasy-v1.22.3-armeabi-v7a.apk",
+        "sha256": "b7e3f73a44b66a316bf5666e009a053886204a23e2de14f4dd8764f24244e385",
+        "size": 18452552
       },
       "x86_64": {
-        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.2/LifeEasy-v1.22.2-x86_64.apk",
-        "sha256": "e09d9e122905c1ab07c68871890cb771082766bb277a7bf12d7be3aefb705314",
-        "size": 19550691
+        "url": "https://github.com/BitaMatt/Life_easy_caculator_updates/releases/download/v1.22.3/LifeEasy-v1.22.3-x86_64.apk",
+        "sha256": "0d958ae0ed5ab9d43e539f7a9218a31e1c16fc423611f67690cfc95a659ed756",
+        "size": 19780603
       }
     }
   },
@@ -32,16 +32,16 @@
   },
   "notes": {
     "zh": [
-      "改善智能計算分析書的分頁密度、長者閱讀體驗：以最少但安全的頁數平均分配完整年度資料，不再有只剩一兩行的巨大留白尾頁；跨頁保留表頭與所有現金流資料。",
-      "中文短欄名及一般利益表最多每頁16行；英文或較長欄位採每頁最多12行的較保守排版，避免為減頁數而裁切文字。頁數會因資料及語言而不同。",
-      "條件明細均衡分頁，簡短的風險提醒可合併到條件尾頁，但所有警示、回報假設和費用說明仍完整顯示。教育保險分析書範例由11頁改善為8頁，年度、IRR及銀行比較仍與原先數據一致。",
-      "新增長短欄名、14年及33年現金流、無重複／無漏行、頁首重複表頭、英文溢出、短屏／大字與PDF實際渲染回歸測試。原有計算公式、收益假設、海報與分享格式均不變。"
+      "令原本純圖片的 PDF 分析書新增真正可檢索的原生 PDF 文字層：英文欄名、年份、金額、利率及現金流數字可直接搜尋／提取；完整圖表、中文內容、原有 8／13 頁分頁與 PDF 分享方式保持不變。文字層不會改變視覺、收益計算或收費模型。",
+      "新增「大字文字版」可捲動、選取的原生閱讀模式，跟隨 Android／瀏覽器的字體放大設定；同時新增「複製完整分析文字」功能，包括簡繁中文、逐年或逐月記錄、對比曲線對應數據、輸入假設及風險提示，可貼到微信／備忘錄；無須連接雲端。",
+      "PDF 為節省 App 體積，暫不嵌入多 MB 的中文字型；中文仍是清晰可見的圖像，不能宣稱整份 PDF 的中文字也能被搜尋。另提供完整中文可複製文字，避免讓長者誤以為已完整轉成可選文字 PDF。",
+      "加入完整中文文字、長者小屏大字剪貼簿流程、原生 PDF 真實文字提取、教育／退休關鍵數值及現有畫面一致性回歸。所有現金流公式、海報、分享圖片仍沿用原有模型。"
     ],
     "en": [
-      "Improved analysis-book pagination, balanced complete cash-flow schedules between pages, and eliminated almost-empty final pages without losing years, figures or repeating table headers.",
-      "Allow up to 16 rows for compact tables, using a safer 12-row limit for long English labels and descriptions where wrapping needs extra vertical space. Pages may differ by locale and content; no text is silently clipped to reduce page count.",
-      "Balanced assumption cards across pages and placed short disclosures after short final assumptions where layout permits. The illustrated education report now uses eight pages instead of eleven, preserving its 14-year cash flows, IRR, bank benchmarks and risk warnings.",
-      "Added regression coverage for 14/33-year lossless pagination, repeated headers, wrapped English columns, financial report rendering, large-text interfaces and explicit disclosures. Financial formulas and share formats are unchanged."
+      "Added an actual, invisible PDF text layer indexing English labels and financial numbers in previously image-only analysis PDFs. Years, amounts, rates and cash-flow values are searchable/extractable while chart layouts and existing calculations remain unchanged.",
+      "Added a native, selectable large-text report preview that follows device text scaling, alongside a complete Unicode copy action for Chinese/English headings, financial rows, comparison points, assumptions and risk warnings. Users can paste it into chat or Notes; no upload or account is needed.",
+      "Chinese characters in PDF remain image-backed and cannot yet be searched inside the PDF itself. This deliberate limitation avoids shipping large CJK font assets and growing the Android installer; full Chinese text is available separately through Copy.",
+      "Added native PDF extraction QA, mobile senior-font clipboard interaction tests, and real 8-/13-page report rendering checks. Financial formulas, poster design and share semantics remain intact."
     ]
   }
 }
